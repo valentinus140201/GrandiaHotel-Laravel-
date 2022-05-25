@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ViewDetailsController;
+use App\Http\Controllers\MasterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,7 @@ use App\Http\Controllers\ViewDetailsController;
 
 Route::get('/', [CategoriesController::class, 'index']);
 Route::get('/categories', [CategoriesController::class, 'index']);
+Route::get('/master', [MasterController::class, 'index']);
+Route::get('/viewdetails', [ViewDetailsController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);

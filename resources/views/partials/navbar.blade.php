@@ -1,19 +1,12 @@
-<nav class="py-2 bg-light border-bottom">
+<nav class="py-2 border-bottom" style="background:#7B3F00;">
     <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
-            <li class="nav-item"><a href="/categories" class="nav-link link-dark px-2" aria-current="page">Categories</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Master
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                    <li><a class="dropdown-item" href="/add">Add Menu</a></li>
-                </ul>
-            </li>
+            <li class="nav-item"><a href="/categories" class="nav-link link-dark px-2 text-black {{ ($title === "Categories") ? 'active' : '' }}" aria-current=" page"><b>Categories</b></a></li>
+            <li class="nav-item"><a href="/master" class="nav-link link-dark px-2 text-black {{ ($title === "Master") ? 'active' : '' }}" aria-current="page"><b>Master</b></a></li>
         </ul>
         <ul class="nav">
-            <li class="nav-item"><a href="/login" class="nav-link link-dark px-2">Login</a></li>
-            <li class="nav-item"><a href="/register" class="nav-link link-dark px-2">Register</a></li>
+            <li class="nav-item"><a href="/login" class="nav-link link-dark px-2 text-black {{ ($title === "Login") ? 'active' : '' }}"><b>Login</b></a></li>
+            <li class="nav-item"><a href="/register" class="nav-link link-dark px-2 text-black {{ ($title === "Register") ? 'active' : '' }}"><b>Register</b></a></li>
         </ul>
     </div>
 </nav>
