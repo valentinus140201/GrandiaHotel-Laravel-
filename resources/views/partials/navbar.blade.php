@@ -7,6 +7,7 @@
         </ul>
         <ul class="nav">
             <h6 class="m-2">Welcome back , nama</h6>
+            <li class="nav-item"><a href="/" class="nav-link link-dark px-2 text-black"><b>Logout</b></a></li>
         </ul>
     </div>
 </nav>
