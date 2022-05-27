@@ -5,6 +5,9 @@
             <li class="nav-item"><a href="/master" class="nav-link link-dark px-2 text-black {{ ($title === "Master") ? 'active' : '' }}" aria-current="page"><b>Master</b></a></li>
             <li class="nav-item"><a href="/personal" class="nav-link link-dark px-2 text-black {{ ($title === "Personal") ? 'active' : '' }}" aria-current="page"><b>Personal</b></a></li>
         </ul>
+        <ul class="nav">
+            <h6 class="m-2">Welcome back , nama</h6>
+        </ul>
     </div>
 </nav>
 <header class="py-3 mb-4 border-bottom">
