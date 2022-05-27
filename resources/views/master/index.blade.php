@@ -102,33 +102,40 @@
             <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-            <div class="form-floating">
+            <div class="form-floating m-2">
                 <input type="text" name="kategori" class="form-control" rounded-top id="kategori" placeholder="Kategori">
                 <label for="kategori">Kategori</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating m-2">
                 <input type="text" name="namaMenu" class="form-control" rounded-top id="namaMenu" placeholder="Nama Menu">
                 <label for="namaMenu">Nama Menu</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating m-2">
                 <input type="text" name="deskripsi" class="form-control" rounded-top id="deskripsi" placeholder="Deskripsi">
                 <label for="deskripsi">Deskripsi</label>
             </div>
-            <div class="form-floating">
+            <div class="input-group m-2" style="width:1468px;">
+                <input type="file" class="form-control" id="inputGambar">
+                <label class="input-group-text" for="inputGambar">Upload</label>
+            </div>
+            <div class="form-floating m-2">
                 <input type="number" name="harga" class="form-control" rounded-top id="harga" placeholder="Harga">
                 <label for="harga">Harga</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating m-2">
                 <input type="date" name="promoAwal" class="form-control" rounded-top id="promoAwal" placeholder="Promo Awal">
                 <label for="promoAwal">Promo Awal</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating m-2">
                 <input type="date" name="promoAkhir" class="form-control" rounded-top id="promoAkhir" placeholder="Promo Akhir">
                 <label for="promoAkhir">Promo Akhir</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating m-2">
                 <input type="number" name="hargaPromo" class="form-control" rounded-top id="hargaPromo" placeholder="Harga Promo">
                 <label for="harga Promo">Harga Promo</label>
+            </div>
+            <div id="saveAddMenu" class="mt-2 m-2 d-flex justify-content-end">
+                <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">Save</i> </button>
             </div>
         </div>
     </div>

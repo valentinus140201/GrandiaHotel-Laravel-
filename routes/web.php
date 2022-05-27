@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ViewDetailsController;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ViewDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,13 @@ use App\Http\Controllers\MasterController;
 
 Route::get('/', [CategoriesController::class, 'index']);
 Route::get('/categories', [CategoriesController::class, 'index']);
+Route::get('/personal', [PersonalController::class, 'index']);
 Route::get('/master', [MasterController::class, 'index']);
 Route::get('/viewdetails', [ViewDetailsController::class, 'index']);
+
+//Login
 Route::get('/login', [LoginController::class, 'index']);
+
+//Register
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
