@@ -30,12 +30,16 @@ class LoginController extends Controller
                 session(['id' => $user->id]);
                 session(['name' => $user->name]);
                 session(['user' => $user->type]);
-                echo $user->type;
-
+                User::where('id',$user->id)->update(['is_login'=> '1']);
                 return redirect()->intended('/');
             }
         }
 
         return back()->with('loginError', 'Login failed!');
+    }
+
+    public function logout(){
+        Session::flush();
+        return redirect()->intended('/');
     }
 }

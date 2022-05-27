@@ -105,9 +105,9 @@
             <div class="input-group m-2">
                 <select class="form-select" id="pilihKategori">
                     <option selected>Choose Category</option>
-                    <option value="1">Fish</option>
-                    <option value="2">Appetize</option>
-                    <option value="3">Desserts</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Appetize">Appetize</option>
+                    <option value="Desserts">Desserts</option>
                 </select>
                 <label class="input-group-text" for="inputGroupSelect02">Options</label>
             </div>
@@ -158,7 +158,7 @@
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
+    // When the user clicks the button, open the modal
     btn.onclick = function() {
         modalAddMenu.style.display = "block";
     }
