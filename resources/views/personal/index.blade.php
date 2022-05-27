@@ -13,6 +13,7 @@
                 <th scope="col">Username</th>
                 <th scope="col">Password</th>
                 <th scope="col">Phone Number</th>
+                <th scope="col">Type User</th>
                 <th scope="col">Expired</th>
                 <th scope="col">Action</th>
             </tr>
@@ -26,6 +27,7 @@
                 <td>valentinus123</td>
                 <td>123</td>
                 <td>080534304334</td>
+                <td>Admin</td>
                 <td>05-05-2023</td>
                 <td>
                     <div id="editMenu">
@@ -48,6 +50,7 @@
                 <td>valentinus123</td>
                 <td>123</td>
                 <td>080534304334</td>
+                <td>Customer</td>
                 <td>05-05-2023</td>
                 <td>
                     <div id="editMenu">
@@ -70,6 +73,30 @@
                 <td>valentinus123</td>
                 <td>123</td>
                 <td>080534304334</td>
+                <td>Supervisor</td>
+                <td>05-05-2023</td>
+                <td>
+                    <div id="editMenu">
+                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                    </div>
+                    <div id="deleteMenu">
+                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
+                            <i class="bi bi-trash3-fill"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Valentinus</td>
+                <td>valentinus@gmail.com</td>
+                <td>10-01-1989</td>
+                <td>valentinus123</td>
+                <td>123</td>
+                <td>080534304334</td>
+                <td>Cashier</td>
                 <td>05-05-2023</td>
                 <td>
                     <div id="editMenu">
@@ -125,6 +152,15 @@
             <div class="form-floating m-2">
                 <input type="number" name="noTlp" class="form-control" id="noTlp" placeholder="NoTlp">
                 <label for="NoTlp">Phone Number</label>
+            </div>
+            <div class="input-group m-2">
+                <select class="form-select" id="pilihUser">
+                    <option selected>Choose User</option>
+                    <option value="1">Supervisor</option>
+                    <option value="2">Admin</option>
+                    <option value="3">Cashier</option>
+                </select>
+                <label class="input-group-text" for="inputGroupSelect02">Options</label>
             </div>
             <div class="form-floating m-2">
                 <input type="date" name="expired" class="form-control" id="expired" placeholder="expired">
