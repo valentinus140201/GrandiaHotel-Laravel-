@@ -44,3 +44,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);
 Route::get('/menu/{category}', [MenuController::class, 'show']);
+Route::get('/delete/{id}', [MenuController::class, 'destroy']);
