@@ -7,6 +7,7 @@ use App\Http\Controllers\MasterController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ViewDetailsController;
 
 /*
@@ -37,3 +38,6 @@ Route::get('/logout', [LoginController::class, 'logout']);
 //Register
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+//Menu
+Route::post('/addmenu', [MenuController::class, 'store']);
