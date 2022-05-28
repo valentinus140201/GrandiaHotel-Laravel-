@@ -46,7 +46,7 @@
                 <div class="form mb-2">
                     <select id="type" class=" form-select" aria-label="Default select example">
                         <option selected>Choose User</option>
-                        <option value="1">One</option>
+                        <option value="1">satu</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
