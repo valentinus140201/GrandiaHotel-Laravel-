@@ -5,27 +5,25 @@
 <div class="album py-5 bg-light">
     <div class="container">
         @foreach ($menus as $menu)
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                            <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->image }} class="bd-placeholder-img card-img-top" width="100%" height="225"">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->image }} class=" bd-placeholder-img card-img-top" width="100%" height="225"">
                         </svg>
-                        <div class="card-body">
-                            <p class="card-text">{{ $menu->name }}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="btnView1">View</button>
-                                    <div id="myModal" class="modal">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h2>{{ $menu->name }}</h2>
-                                                <span class="close">&times;</span>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="mt-3">{{ $menu->description }}</p>
-                                                <p>{{ $menu->harga }}</p>
-                                            </div>
-                                        </div>
+                        <div class=" card-body">
+                    <p class="card-text">{{ $menu->name }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnView1">View</button>
+                            <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2>{{ $menu->name }}</h2>
+                                        <span class="close">&times;</span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="mt-3">{{ $menu->description }}</p>
+                                        <p>{{ $menu->harga }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -33,9 +31,11 @@
                     </div>
                 </div>
             </div>
-        @endforeach
-
+        </div>
     </div>
+    @endforeach
+
+</div>
 </div>
 <script>
     // Get the modal
