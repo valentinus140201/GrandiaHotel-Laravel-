@@ -8,7 +8,7 @@
             <form action="/addmenu" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form mb-2">
-                    <select id="category" class=" form-select" aria-label="Default select example">
+                    <select name="category" id="category" class=" form-select" aria-label="Default select example">
                         <option selected>Choose Category</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category->type }}">{{ $category->type }}</option>
@@ -17,7 +17,7 @@
                     </select>
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="namaMenu" class="form-control @error('namaMenu')is-invalid @enderror" id="name" placeholder="Nama Menu" required value="{{ old('namaMenu') }}">
+                    <input type="text" name="name" class="form-control @error('namaMenu')is-invalid @enderror" id="name" placeholder="Nama Menu" required value="{{ old('namaMenu') }}">
                     <label for="namaMenu">Nama Menu</label>
                     @error('namaMenu')
                     <div class="invalid-feedback">
@@ -26,7 +26,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="deskripsi" class="form-control @error('deskripsi')is-invalid @enderror" id="description" placeholder="Deskripsi" required value="{{ old('deskripsi') }}">
+                    <input type="text" name="description" class="form-control @error('deskripsi')is-invalid @enderror" id="description" placeholder="Deskripsi" required value="{{ old('deskripsi') }}">
                     <label for="deskripsi">Deskripsi</label>
                     @error('deskripsi')
                     <div class="invalid-feedback">
@@ -48,7 +48,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="date" name="promoAwal" class="form-control @error('promoAwal')is-invalid @enderror" id="promo_awal" placeholder="Promo Awal" required value="{{ old('promoAwal') }}">
+                    <input type="date" name="promo_awal" class="form-control @error('promoAwal')is-invalid @enderror" id="promo_awal" placeholder="Promo Awal" required value="{{ old('promoAwal') }}">
                     <label for="promoAwal">Promo Awal</label>
                     @error('promoAwal')
                     <div class="invalid-feedback">
@@ -57,7 +57,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="date" name="promoAkhir" class="form-control @error('promoAkhir')is-invalid @enderror" id="promo_akhir" placeholder="Promo Akhir" required value="{{ old('promoAkhir') }}">
+                    <input type="date" name="promo_akhir" class="form-control @error('promoAkhir')is-invalid @enderror" id="promo_akhir" placeholder="Promo Akhir" required value="{{ old('promoAkhir') }}">
                     <label for="promoAkhir">Promo Akhir</label>
                     @error('promoAkhir')
                     <div class="invalid-feedback">
@@ -66,7 +66,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="number" name="hargaPromo" class="form-control @error('hargaPromo')is-invalid @enderror" id="harga_promo" placeholder="Harga Promo" required value="{{ old('hargaPromo') }}">
+                    <input type="number" name="harga_promo" class="form-control @error('hargaPromo')is-invalid @enderror" id="harga_promo" placeholder="Harga Promo" required value="{{ old('hargaPromo') }}">
                     <label for="hargaPromo">Harga Promo</label>
                     @error('hargaPromo')
                     <div class="invalid-feedback">

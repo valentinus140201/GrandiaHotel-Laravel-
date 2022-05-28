@@ -8,7 +8,7 @@
             <form action="/addmenu" method="post">
                 {{ csrf_field() }}
                 <div class="form-floating">
-                    <input type="text" name="nama" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="Nama" required value="{{ old('nama') }}">
+                    <input type="text" name="name" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="Nama" required value="{{ old('nama') }}">
                     <label for="nama">Nama</label>
                     @error('nama')
                     <div class="invalid-feedback">
@@ -44,7 +44,7 @@
                     @enderror
                 </div>
                 <div class="form mb-2">
-                    <select id="type" class=" form-select" aria-label="Default select example">
+                    <select id="type" name="type" class=" form-select" aria-label="Default select example">
                         <option selected>Choose User</option>
                         <option value="1">satu</option>
                         <option value="2">Two</option>
