@@ -35,17 +35,19 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $validateData = $request->validate([
-            'name' => 'required',
-            'compability' => 'required',
-            'price' => 'required',
-            'vendor' => 'required',
-            'image' => 'image|file|max:3072',
-            'category' => 'required',
-            'description' => 'required',
-            'stock' => 'required'
-        ]);
+        dd($request);
+        // $validateData = $request->validate([
+        //     'name' => 'required',
+        //     'compability' => 'required',
+        //     'price' => 'required',
+        //     'vendor' => 'required',
+        //     'image' => 'image|file|max:3072',
+        //     'category' => 'required',
+        //     'description' => 'required',
+        //     'stock' => 'required'
+        // ]);
+
+        // $validateData['image'] = $request->file('image')->store('product-images');
     }
 
     /**
