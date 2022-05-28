@@ -15,11 +15,6 @@ return new class extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
-            $table->date('promo_awal');
-            $table->date('promo_akhir');
-            $table->integer('harga_promo');
-            $table->foreignId('menu');
-            $table->boolean('is_promo')->default(false);
             $table->timestamps();
         });
     }

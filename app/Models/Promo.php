@@ -11,7 +11,6 @@ class Promo extends Model
         'promo_awal',
         'promo_akhir',
         'harga_promo',
-        'is_promo'
     ];
     use HasFactory;
 }
