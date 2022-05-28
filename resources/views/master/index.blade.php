@@ -29,9 +29,9 @@
                 <td>50.000</td>
                 <td>
                     <div id="editMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-pencil"></i>
-                        </button>
+                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/master/updatemenu">
+                                <i class="bi bi-pencil"></i></a>
+                        </h1>
                     </div>
                     <div id="deleteMenu">
                         <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
@@ -87,93 +87,7 @@
         </tbody>
     </table>
 </div>
-<!-- The Modal -->
 <div id="addmenu" class="ms-5 ps-5">
-    <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-        <i class="bi bi-plus-circle-fill pe-2"> Add Menu</i>
-    </button>
+    <a href="/master/addmenu"><i class="bi bi-plus-circle-fill pe-2"> Add Menu</i></a>
 </div>
-
-<div id="modalAddMenu" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Add Menu</h2>
-            <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-            <div class="input-group m-2">
-                <select class="form-select" id="pilihKategori">
-                    <option selected>Choose Category</option>
-                    <option value="1">Fish</option>
-                    <option value="2">Appetize</option>
-                    <option value="3">Desserts</option>
-                </select>
-                <label class="input-group-text" for="inputGroupSelect02">Options</label>
-            </div>
-            <div class="form-floating m-2">
-                <input type="text" name="namaMenu" class="form-control" id="namaMenu" placeholder="Nama Menu">
-                <label for="namaMenu">Nama Menu</label>
-            </div>
-            <div class="form-floating m-2">
-                <input type="text" name="deskripsi" class="form-control" id="deskripsi" placeholder="Deskripsi">
-                <label for="deskripsi">Deskripsi</label>
-            </div>
-            <div class="input-group m-2">
-                <input type="file" class="form-control" id="inputGambar">
-                <label class="input-group-text" for="inputGambar">Upload</label>
-            </div>
-            <div class="form-floating m-2">
-                <input type="number" name="harga" class="form-control" id="harga" placeholder="Harga">
-                <label for="harga">Harga</label>
-            </div>
-            <div class="form-floating m-2">
-                <input type="date" name="promoAwal" class="form-control" id="promoAwal" placeholder="Promo Awal">
-                <label for="promoAwal">Promo Awal</label>
-            </div>
-            <div class="form-floating m-2">
-                <input type="date" name="promoAkhir" class="form-control" id="promoAkhir" placeholder="Promo Akhir">
-                <label for="promoAkhir">Promo Akhir</label>
-            </div>
-            <div class="form-floating m-2">
-                <input type="number" name="hargaPromo" class="form-control" id="hargaPromo" placeholder="Harga Promo">
-                <label for="harga Promo">Harga Promo</label>
-            </div>
-            <div id="saveAddMenu" class="mt-2 m-2 d-flex justify-content-end">
-                <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">Save</i> </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<script>
-    // Get the modal
-    var modalAddMenu = document.getElementById("modalAddMenu");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("addmenu");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-        modalAddMenu.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modalAddMenu.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modalAddMenu.style.display = "none";
-        }
-    }
-</script>
-
 @endsection

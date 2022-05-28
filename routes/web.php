@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RouterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasterController;
@@ -24,6 +25,9 @@ Route::get('/categories', [CategoriesController::class, 'index']);
 Route::get('/personal', [PersonalController::class, 'index']);
 Route::get('/master', [MasterController::class, 'index']);
 Route::get('/viewdetails', [ViewDetailsController::class, 'index']);
+Route::get('/master/addmenu', [RouterController::class, 'addMenu']);
+Route::get('/master/updatemenu', [RouterController::class, 'editMenu']);
+
 
 //Login
 Route::get('/login', [LoginController::class, 'index']);
