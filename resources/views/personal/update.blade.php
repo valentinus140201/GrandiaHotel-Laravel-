@@ -8,7 +8,7 @@
             <form action="/addmenu" method="post">
                 {{ csrf_field() }}
                 <div class="form-floating">
-                    <input type="text" name="nama" class="form-control @error('nama')is-invalid @enderror" id="nama" placeholder="Nama" required value="{{ old('nama') }}">
+                    <input type="text" name="nama" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="Nama" required value="{{ old('nama') }}">
                     <label for="nama">Nama</label>
                     @error('nama')
                     <div class="invalid-feedback">
@@ -20,15 +20,6 @@
                     <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
                     <label for="email">Email address</label>
                     @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-floating">
-                    <input type="date" name="tanggalLahir" class="form-control @error('tanggalLahir')is-invalid @enderror" id="tanggalLahir" placeholder="Tanggal Lahir" required value="{{ old('tanggalLahir') }}">
-                    <label for="tanggalLahir">Tanggal Lahir</label>
-                    @error('tanggalLahir')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -52,17 +43,8 @@
                     </div>
                     @enderror
                 </div>
-                <div class="form-floating">
-                    <input type="text" name="noHand" class="form-control @error('noHand')is-invalid @enderror" id="noHand" placeholder="No Hand" required value="{{ old('No Hand') }}">
-                    <label for="noHand">No Handphone</label>
-                    @error('noHand')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
                 <div class="form mb-2">
-                    <select id="typeUser" class=" form-select" aria-label="Default select example">
+                    <select id="type" class=" form-select" aria-label="Default select example">
                         <option selected>Choose User</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
