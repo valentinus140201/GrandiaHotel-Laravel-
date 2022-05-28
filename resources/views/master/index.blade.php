@@ -18,15 +18,16 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($menus as $menu)
             <tr>
-                <th scope="row">1</th>
-                <td>Nasi</td>
-                <td>Nasi Goreng Sambal Hijau</td>
-                <td>sajian nasi yang digoreng dalam sebuah wajan atau penggorengan menghasilkan cita rasa berbeda karena dicampur dengan bumbu-bumbu seperti garam, bawang putih, bawang merah, merica dan kecap manis.</td>
-                <td>60.500</td>
-                <td>01-05-2022 - 05-05-2022</td>
-                <td>20-05-2022 - 25-05-2022</td>
-                <td>50.000</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $menu->category }}</td>
+                <td>{{ $menu->name }}</td>
+                <td>{{ $menu->description }}</td>
+                <td>{{ $menu->harga }}</td>
+                <td>{{ $menu->promo_awal }}</td>
+                <td>{{ $menu->promo_akhir }}</td>
+                <td>{{ $menu->harga_promo }}</td>
                 <td>
                     <div id="editMenu">
                         <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/master/updatemenu">
@@ -34,15 +35,15 @@
                         </h1>
                     </div>
                     @if (Session::get('type') == 'admin')
-                    <div id="deleteMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-trash3-fill"></i>
-                        </button>
-                    </div>
+                        <div id="deleteMenu">
+                            <a href="/delete/{{ $menu->id }}" class="w-10 py-2 mb-2 btn rounded-3">
+                                <i class="bi bi-trash3-fill"></i>
+                            </a>
+                        </div>
                     @endif
-
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
