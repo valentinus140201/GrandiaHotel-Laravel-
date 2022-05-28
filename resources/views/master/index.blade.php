@@ -29,9 +29,9 @@
                 <td>50.000</td>
                 <td>
                     <div id="editMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-pencil"></i>
-                        </button>
+                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/master/updatemenu">
+                                <i class="bi bi-pencil"></i></a>
+                        </h1>
                     </div>
                     <div id="deleteMenu">
                         <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
@@ -87,12 +87,10 @@
         </tbody>
     </table>
 </div>
-<!-- The Modal -->
 <div id="addmenu" class="ms-5 ps-5">
-    <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-        <i class="bi bi-plus-circle-fill pe-2"> Add Menu</i>
-    </button>
+    <a href="/master/addmenu"><i class="bi bi-plus-circle-fill pe-2"> Add Menu</i></a>
 </div>
+<<<<<<< HEAD
 
 <div id="modalAddMenu" class="modal">
     <!-- Modal content -->
@@ -177,3 +175,6 @@
 </script>
 
 @endsection
+=======
+@endsection
+>>>>>>> 7d4eef473bc31d582ae95685ca62d00c5f166931
