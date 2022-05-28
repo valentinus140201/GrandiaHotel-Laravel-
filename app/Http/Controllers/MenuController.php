@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Promo;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -35,20 +36,25 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        // $validateData = $request->validate([
-        //     'name' => 'required',
-        //     'compability' => 'required',
-        //     'price' => 'required',
-        //     'vendor' => 'required',
-        //     'image' => 'image|file|max:3072',
-        //     'category' => 'required',
-        //     'description' => 'required',
-        //     'stock' => 'required'
-        // ]);
+        // dd($request);
 
-        // $validateData['image'] = $request->file('image')->store('product-images');
+        $validateData= $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'harga' => 'required',
+            'image' => 'image|file|max:3072',
+            'category' => 'required',
+            'promo_awal' => 'required',
+            'promo_akhir' => 'required',
+            'harga_promo' => 'required',
+        ]);
+
+        $validateData['image'] = $request->file('image')->store('menu-images');
+
+        Menu::create($validateData);
+        return redirect()->intended('/');
     }
+
 
     /**
      * Display the specified resource.
@@ -56,9 +62,11 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    public function show($category)
     {
-        //
+        $menu = Menu::where('category', $category)->get();
+        // dd($menu);
+        return view('viewdetails.index', ["title" =>  $category , 'menus' => $menu]);
     }
 
     /**

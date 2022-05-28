@@ -12,8 +12,10 @@ class Menu extends Model
         'description',
         'image',
         'harga',
-        'category',
-        'is_promo'
+        'promo_awal',
+        'promo_akhir',
+        'harga_promo',
+        'category'
     ];
 
     protected function Order()

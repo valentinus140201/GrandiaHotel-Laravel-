@@ -19,7 +19,10 @@ return new class extends Migration
             $table->string('description');
             $table->string('image')->default('');
             $table->string('harga');
-            $table->foreignId('category');
+            $table->date('promo_awal');
+            $table->date('promo_akhir');
+            $table->integer('harga_promo');
+            $table->string('category');
             $table->timestamps();
         });
     }
