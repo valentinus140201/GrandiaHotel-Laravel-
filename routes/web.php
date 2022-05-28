@@ -27,6 +27,8 @@ Route::get('/master', [MasterController::class, 'index']);
 Route::get('/viewdetails', [ViewDetailsController::class, 'index']);
 Route::get('/master/addmenu', [RouterController::class, 'addMenu']);
 Route::get('/master/updatemenu', [RouterController::class, 'editMenu']);
+Route::get('/personal/addpersonal', [RouterController::class, 'addPersonal']);
+Route::get('/personal/editpersonal', [RouterController::class, 'editPersonal']);
 
 
 //Login

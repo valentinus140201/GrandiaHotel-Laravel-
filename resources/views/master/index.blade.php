@@ -40,50 +40,6 @@
                     </div>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Ayam</td>
-                <td>Ayam Goreng</td>
-                <td>sajian nasi yang digoreng dalam sebuah wajan atau penggorengan menghasilkan cita rasa berbeda karena dicampur dengan bumbu-bumbu seperti garam, bawang putih, bawang merah, merica dan kecap manis.</td>
-                <td>57.500</td>
-                <td>01-05-2022 - 05-05-2022</td>
-                <td>20-05-2022 - 25-05-2022</td>
-                <td>50.000</td>
-                <td>
-                    <div id="editMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                    </div>
-                    <div id="deleteMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-trash3-fill"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Ikan</td>
-                <td>Ikan Goreng</td>
-                <td>sajian nasi yang digoreng dalam sebuah wajan atau penggorengan menghasilkan cita rasa berbeda karena dicampur dengan bumbu-bumbu seperti garam, bawang putih, bawang merah, merica dan kecap manis.</td>
-                <td>70.500</td>
-                <td>01-05-2022 - 05-05-2022</td>
-                <td>20-05-2022 - 25-05-2022</td>
-                <td>50.000</td>
-                <td>
-                    <div id="editMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                    </div>
-                    <div id="deleteMenu">
-                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                            <i class="bi bi-trash3-fill"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
 </div>

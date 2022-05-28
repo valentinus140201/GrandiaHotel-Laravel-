@@ -19,4 +19,18 @@ class RouterController extends Controller
             'title' => 'Update Menu'
         ]);
     }
+
+    public function addPersonal()
+    {
+        return view('personal.add', [
+            'title' => 'Add Personal'
+        ]);
+    }
+
+    public function editPersonal()
+    {
+        return view('personal.update', [
+            'title' => 'Update Personal'
+        ]);
+    }
 }
