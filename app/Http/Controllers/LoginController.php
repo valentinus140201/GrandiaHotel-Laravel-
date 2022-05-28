@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -22,12 +23,24 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('/categories');
+        if (User::where('email', '=', $request->email)->exists()) {
+            $user = User::where('email', $request->email)->first();
+            if($user->password == $request->password){
+                session()->regenerate();
+                session(['id' => $user->id]);
+                session(['name' => $user->name]);
+                session(['type' => $user->type]);
+                User::where('id',$user->id)->update(['is_login'=> '1']);
+                return redirect()->intended('/');
+            }
         }
 
         return back()->with('loginError', 'Login failed!');
+    }
+
+    public function logout(){
+        User::where('id',Session::get('id'))->update(['is_login'=> '0']);
+        Session::flush();
+        return redirect()->intended('/');
     }
 }
