@@ -98,8 +98,12 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
+    public function destroy($id)
     {
-        //
+        $menu = Menu::find($id);
+        $menu->delete();
+        $menu = Menu::all();
+        // dd($menu);
+        return view('master.index', ["title" =>  'Master' , 'menus' => $menu]);
     }
 }
