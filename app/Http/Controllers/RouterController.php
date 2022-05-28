@@ -16,6 +16,13 @@ class RouterController extends Controller
         ]);
     }
 
+    public function addCategory()
+    {
+        return view('master.addKategori', [
+            'title' => 'Add Category'
+        ]);
+    }
+
     public function editMenu()
     {
         return view('master.update', [

@@ -34,11 +34,11 @@
                         </h1>
                     </div>
                     @if (Session::get('type') == 'admin')
-                        <div id="deleteMenu">
-                            <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
-                                <i class="bi bi-trash3-fill"></i>
-                            </button>
-                        </div>
+                    <div id="deleteMenu">
+                        <button class="w-10 py-2 mb-2 btn rounded-3" type="submit">
+                            <i class="bi bi-trash3-fill"></i>
+                        </button>
+                    </div>
                     @endif
 
                 </td>
@@ -49,6 +49,9 @@
 @if (Session::get('type') == 'admin')
 <div id="addmenu" class="ms-5 ps-5">
     <a href="/master/addmenu"><i class="bi bi-plus-circle-fill pe-2"> Add Menu</i></a>
+</div>
+<div id="addcategory" class="ms-5 ps-5">
+    <a href="/master/addcategory"><i class="bi bi-plus-circle-fill pe-2"> Add Category</i></a>
 </div>
 @endif
 
