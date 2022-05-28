@@ -5,14 +5,15 @@
     <div class="col-lg-5">
         <main class="form-add-menu">
             <h1 class="h3 mb-3 fw-normal">Add Menu Form</h1>
-            <form action="/addmenu" method="post">
+            <form action="/addmenu" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form mb-2">
                     <select id="category" class=" form-select" aria-label="Default select example">
                         <option selected>Choose Category</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->type }}">{{ $category->type }}</option>
+                        @endforeach
+
                     </select>
                 </div>
                 <div class="form-floating">
@@ -34,12 +35,8 @@
                     @enderror
                 </div>
                 <div class="input-group mt-2 mx-2 mb-2 pe-2">
-                    <input type="file" name="inputGambar" class="form-control @error('inputGambar')is-invalid @enderror" id="inputGambar" required value="{{ old('inputGambar') }}">
-                    @error('inputGambar')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
+                    <label for="image" class="form-label"></label>
+                    <input class="form-control" type="file" id="image" name="image">
                 </div>
                 <div class="form-floating">
                     <input type="number" name="harga" class="form-control @error('harga')is-invalid @enderror" id="harga" placeholder="Harga" required value="{{ old('harga') }}">

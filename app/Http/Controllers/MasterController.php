@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
 {
     public function index()
     {
-        return view('master.index', [
-            'title' => 'Master'
-        ]);
+        if (Session::get('type') == 'admin' || Session::get('type') == 'supervisor'){
+            return view('master.index', [
+                'title' => 'Master'
+            ]);
+        }else{
+            return redirect()->intended('/');
+        }
+
     }
 }
