@@ -29,7 +29,7 @@ class LoginController extends Controller
                 session()->regenerate();
                 session(['id' => $user->id]);
                 session(['name' => $user->name]);
-                session(['user' => $user->type]);
+                session(['type' => $user->type]);
                 User::where('id',$user->id)->update(['is_login'=> '1']);
                 return redirect()->intended('/');
             }
@@ -39,6 +39,7 @@ class LoginController extends Controller
     }
 
     public function logout(){
+        User::where('id',Session::get('id'))->update(['is_login'=> '0']);
         Session::flush();
         return redirect()->intended('/');
     }

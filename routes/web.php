@@ -28,6 +28,7 @@ Route::get('/viewdetails', [ViewDetailsController::class, 'index']);
 //Login
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 //Register
 Route::get('/register', [RegisterController::class, 'index']);
