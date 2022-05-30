@@ -4,7 +4,7 @@
 <div class="row justify-content-center ">
     <div class="col-lg-5">
         <main class="form-add-menu">
-            <h1 class="h3 mb-3 fw-normal">Add Update Form</h1>
+            <h1 class="h3 mb-3 fw-normal">Update Menu Form</h1>
             <form action="/addmenu" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form mb-2">
