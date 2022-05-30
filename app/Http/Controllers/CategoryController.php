@@ -38,7 +38,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        $validateData = $request->validate([
+            'type' => 'required',
+            'image' => 'image|file|max:3072'
+        ]);
+
+        $validateData['image'] = $request->file('image')->store('category-images');
+
+        Category::create($validateData);
+        return redirect()->intended('/master');
     }
 
     /**

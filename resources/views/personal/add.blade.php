@@ -51,15 +51,6 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-floating">
-                    <input type="number" name="is_login" class="form-control @error('is_login')is-invalid @enderror" id="is_login" placeholder="Is Login" required value="{{ old('is_login') }}">
-                    <label for="is_login">Is Login</label>
-                    @error('is_login')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
                 <!-- <div class="form-floating">
                     <input type="date" name="expired" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="Expired" required value="{{ old('expired') }}">
                     <label for="expired">Expired</label>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Menu;
+
 use Illuminate\Http\Request;
 
 class RouterController extends Controller
@@ -26,8 +28,10 @@ class RouterController extends Controller
 
     public function editMenu()
     {
+        $category = Category::all();
+        $menu = Menu::all();
         return view('master.update', [
-            'title' => 'Update Menu'
+            'title' => 'Update Menu', 'categories' => $category, 'menus' => $menu
         ]);
     }
 

@@ -30,7 +30,7 @@
                 <td>{{ $menu->harga_promo }}</td>
                 <td>
                     <div id="editMenu">
-                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/master/updatemenu">
+                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/master/editmenu">
                                 <i class="bi bi-pencil"></i></a>
                         </h1>
                     </div>

@@ -29,7 +29,7 @@
                 <td>{{ $user->is_login }}</td>
                 <td>
                     <div id="editPersonal">
-                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/personal/updatepersonal">
+                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/personal/editpersonal">
                                 <i class="bi bi-pencil"></i></a>
                         </h1>
                     </div>

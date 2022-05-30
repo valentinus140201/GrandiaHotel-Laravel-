@@ -25,7 +25,7 @@ Route::get('/', [CategoryController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/master', [MasterController::class, 'index']);
 Route::get('/master/addmenu', [RouterController::class, 'addMenu']);
-Route::get('/master/updatemenu', [RouterController::class, 'editMenu']);
+Route::get('/master/editmenu', [RouterController::class, 'editMenu']);
 Route::get('/master/addcategory', [RouterController::class, 'addCategory']);
 Route::get('/personal/addpersonal', [RouterController::class, 'addPersonal']);
 Route::get('/personal/editpersonal', [RouterController::class, 'editPersonal']);
@@ -44,3 +44,6 @@ Route::get('/personal/delete/{id}', [PersonalController::class, 'destroy']);
 Route::post('/addmenu', [MenuController::class, 'store']);
 Route::get('/categories/menu/{category}', [MenuController::class, 'show']);
 Route::get('/menu/delete/{id}', [MenuController::class, 'destroy']);
+
+//Category
+Route::post('/addcategory', [CategoryController::class, 'store']);

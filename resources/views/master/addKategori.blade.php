@@ -5,7 +5,7 @@
     <div class="col-lg-5">
         <main class="form-add-kategori">
             <h1 class="h3 mb-3 fw-normal">Add Category Form</h1>
-            <form action="/addmenu" method="post" enctype="multipart/form-data">
+            <form action="/addcategory" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-floating m-2">
                     <input type="text" name="type" class="form-control @error('type')is-invalid @enderror" id="type" placeholder="Type" required value="{{ old('type') }}">

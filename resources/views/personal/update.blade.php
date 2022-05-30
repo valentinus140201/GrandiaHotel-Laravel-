@@ -5,10 +5,10 @@
     <div class="col-lg-5">
         <main class="form-update-personal">
             <h1 class="h3 mb-3 fw-normal">Update Personal Form</h1>
-            <form action="/updatepersonal" method="post" enctype="multipart/form-data">
+            <form action="/editpersonal" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-floating">
-                    <input type="text" name="name" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="Name" required value="{{ old('name') }}">
+                    <input type="text" name="name" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="Name" required value="{{ $personal->name }}">
                     <label for="name">Name</label>
                     @error('name')
                     <div class="invalid-feedback">
@@ -17,7 +17,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="username" class="form-control @error('username')is-invalid @enderror" id="username" placeholder="Username" required value="{{ old('username') }}">
+                    <input type="text" name="username" class="form-control @error('username')is-invalid @enderror" id="username" placeholder="Username" required value="{{ $personal->username }}">
                     <label for="username">Username</label>
                     @error('username')
                     <div class="invalid-feedback">
@@ -26,7 +26,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ old('email') }}">
+                    <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ $personal->email }}">
                     <label for="email">Email address</label>
                     @error('email')
                     <div class="invalid-feedback">
@@ -52,15 +52,6 @@
                     </select>
                 </div>
                 <!-- <div class="form-floating">
-                    <input type="number" name="is_login" class="form-control @error('is_login')is-invalid @enderror" id="is_login" placeholder="Is Login" required value="{{ old('is_login') }}">
-                    <label for="is_login">Is Login</label>
-                    @error('is_login')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div> -->
-                <!-- <div class="form-floating">
                     <input type="date" name="expired" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="Expired" required value="{{ old('expired') }}">
                     <label for="expired">Expired</label>
                     @error('expired')
@@ -69,7 +60,7 @@
                     </div>
                     @enderror
                 </div> -->
-                <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">SAVE</button>
+                <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">SAVE CHANGE</button>
             </form>
         </main>
     </div>
