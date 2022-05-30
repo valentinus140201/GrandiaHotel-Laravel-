@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RouterController extends Controller
@@ -32,8 +33,9 @@ class RouterController extends Controller
 
     public function addPersonal()
     {
+        $user = User::all();
         return view('personal.add', [
-            'title' => 'Add Personal'
+            'title' => 'Add Personal', 'users' => $user
         ]);
     }
 

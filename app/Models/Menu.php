@@ -18,9 +18,5 @@ class Menu extends Model
         'category'
     ];
 
-    protected function Order()
-    {
-        return $this->belongsTo(Category::class);
-    }
     use HasFactory;
 }

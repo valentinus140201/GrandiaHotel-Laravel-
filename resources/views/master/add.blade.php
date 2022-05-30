@@ -13,7 +13,6 @@
                         @foreach ($categories as $category)
                         <option value="{{ $category->type }}">{{ $category->type }}</option>
                         @endforeach
-
                     </select>
                 </div>
                 <div class="form-floating">

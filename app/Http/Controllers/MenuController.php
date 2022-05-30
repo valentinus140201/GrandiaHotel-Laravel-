@@ -52,7 +52,7 @@ class MenuController extends Controller
         $validateData['image'] = $request->file('image')->store('menu-images');
 
         Menu::create($validateData);
-        return redirect()->intended('/');
+        return redirect()->intended('/master');
     }
 
 
@@ -66,7 +66,7 @@ class MenuController extends Controller
     {
         $menu = Menu::where('category', $category)->get();
         // dd($menu);
-        return view('viewdetails.index', ["title" =>  $category, 'menus' => $menu]);
+        return view('viewdetails.index', ['title' =>  $category, 'menus' => $menu]);
     }
 
     /**

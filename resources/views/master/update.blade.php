@@ -3,7 +3,7 @@
 @section('container')
 <div class="row justify-content-center ">
     <div class="col-lg-5">
-        <main class="form-add-menu">
+        <main class="form-update-menu">
             <h1 class="h3 mb-3 fw-normal">Update Menu Form</h1>
             <form action="/addmenu" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}

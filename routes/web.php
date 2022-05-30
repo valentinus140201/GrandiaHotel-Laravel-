@@ -23,9 +23,7 @@ use App\Http\Controllers\ViewDetailsController;
 
 Route::get('/', [CategoryController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/personal', [PersonalController::class, 'index']);
 Route::get('/master', [MasterController::class, 'index']);
-Route::get('/viewdetails', [ViewDetailsController::class, 'index']);
 Route::get('/master/addmenu', [RouterController::class, 'addMenu']);
 Route::get('/master/updatemenu', [RouterController::class, 'editMenu']);
 Route::get('/master/addcategory', [RouterController::class, 'addCategory']);
@@ -38,10 +36,11 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
 //Personal
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/addpersonal', [PersonalController::class, 'store']);
+Route::get('/personal', [PersonalController::class, 'show']);
+Route::get('/delete/{id}', [PersonalController::class, 'destroy']);
 
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);
-Route::get('/menu/{category}', [MenuController::class, 'show']);
+Route::get('/categories/menu/{category}', [MenuController::class, 'show']);
 Route::get('/delete/{id}', [MenuController::class, 'destroy']);
