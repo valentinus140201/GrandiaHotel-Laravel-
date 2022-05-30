@@ -25,21 +25,22 @@ class LoginController extends Controller
 
         if (User::where('email', '=', $request->email)->exists()) {
             $user = User::where('email', $request->email)->first();
-            if($user->password == $request->password){
+            if ($user->password == $request->password) {
                 session()->regenerate();
                 session(['id' => $user->id]);
                 session(['name' => $user->name]);
                 session(['type' => $user->type]);
-                User::where('id',$user->id)->update(['is_login'=> '1']);
-                return redirect()->intended('/');
+                User::where('id', $user->id)->update(['is_login' => '1']);
+                return redirect()->intended('/categories');
             }
         }
 
         return back()->with('loginError', 'Login failed!');
     }
 
-    public function logout(){
-        User::where('id',Session::get('id'))->update(['is_login'=> '0']);
+    public function logout()
+    {
+        User::where('id', Session::get('id'))->update(['is_login' => '0']);
         Session::flush();
         return redirect()->intended('/');
     }

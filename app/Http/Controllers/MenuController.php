@@ -38,7 +38,7 @@ class MenuController extends Controller
     {
         // dd($request);
 
-        $validateData= $request->validate([
+        $validateData = $request->validate([
             'name' => 'required',
             'description' => 'required',
             'harga' => 'required',
@@ -66,7 +66,7 @@ class MenuController extends Controller
     {
         $menu = Menu::where('category', $category)->get();
         // dd($menu);
-        return view('viewdetails.index', ["title" =>  $category , 'menus' => $menu]);
+        return view('viewdetails.index', ["title" =>  $category, 'menus' => $menu]);
     }
 
     /**
@@ -104,6 +104,6 @@ class MenuController extends Controller
         $menu->delete();
         $menu = Menu::all();
         // dd($menu);
-        return view('master.index', ["title" =>  'Master' , 'menus' => $menu]);
+        return view('master.index', ["title" =>  'Master', 'menus' => $menu]);
     }
 }
