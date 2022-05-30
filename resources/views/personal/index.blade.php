@@ -35,7 +35,7 @@
                     </div>
                     @if (Session::get('type') == 'admin')
                     <div id="deletePersonal">
-                        <a href="/delete/{{ $user->id }}" class="w-10 py-2 mb-2 btn rounded-3">
+                        <a href="personal/delete/{{ $user->id }}" class="w-10 py-2 mb-2 btn rounded-3">
                             <i class="bi bi-trash3-fill"></i>
                         </a>
                     </div>

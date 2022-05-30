@@ -49,7 +49,6 @@ class PersonalController extends Controller
         $validateData['password'] = bcrypt($validateData['password']);
 
         User::create($validateData);
-        session()->flash('success', 'Add personal successfull!! Please Login');
 
         return redirect()->intended('/personal');
     }
@@ -62,7 +61,7 @@ class PersonalController extends Controller
     public function show()
     {
         $user = User::all();
-        return view('personal.index', ['title' => 'Add Personal', 'users' => $user,]);
+        return view('personal.index', ['title' => 'Add Personal', 'users' => $user]);
     }
 
     /**

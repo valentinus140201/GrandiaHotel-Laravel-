@@ -38,9 +38,9 @@ Route::get('/logout', [LoginController::class, 'logout']);
 //Personal
 Route::post('/addpersonal', [PersonalController::class, 'store']);
 Route::get('/personal', [PersonalController::class, 'show']);
-Route::get('/delete/{id}', [PersonalController::class, 'destroy']);
+Route::get('/personal/delete/{id}', [PersonalController::class, 'destroy']);
 
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);
 Route::get('/categories/menu/{category}', [MenuController::class, 'show']);
-Route::get('/delete/{id}', [MenuController::class, 'destroy']);
+Route::get('/menu/delete/{id}', [MenuController::class, 'destroy']);
