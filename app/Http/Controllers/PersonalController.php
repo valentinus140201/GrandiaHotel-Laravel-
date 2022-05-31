@@ -45,7 +45,8 @@ class PersonalController extends Controller
             'type' => 'required',
         ]);
 
-        $validateData['password'] = bcrypt($validateData['password']);
+        $validateData['password'] = md5($validateData['password']);
+        // dd($validateData['password']);
 
         User::create($validateData);
 

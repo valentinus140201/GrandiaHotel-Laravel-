@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         if (User::where('email', '=', $request->email)->exists()) {
             $user = User::where('email', $request->email)->first();
-            if ($user->password == $request->password) {
+            if ($user->password == md5($request->password)) {
                 session()->regenerate();
                 session(['id' => $user->id]);
                 session(['name' => $user->name]);

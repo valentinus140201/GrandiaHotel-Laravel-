@@ -60,3 +60,12 @@
   width: 380px;
 }
 
+.modal-backdrop {
+  /* bug fix - no overlay */    
+  display: none;    
+}
+
+.modal-content {
+  margin: 2px auto;
+  z-index: 1100 !important;
+}
