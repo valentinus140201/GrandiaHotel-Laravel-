@@ -64,7 +64,7 @@ class MenuController extends Controller
      */
     public function show($category)
     {
-        $menu = Menu::where('category', $category)/*->latest()->filter(request(['search']))*/->paginate(10)->withQueryString();
+        $menu = Menu::where('category', $category)/*->latest()->filter(request(['search']))*/->paginate(8)->withQueryString();
         // dd($menu);
         // masalah klo gabungin where sama latest()
         return view('viewdetails.index', ['title' =>  $category, 'menus' => $menu]);

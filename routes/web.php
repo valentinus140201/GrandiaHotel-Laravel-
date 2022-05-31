@@ -21,24 +21,30 @@ use App\Http\Controllers\ViewDetailsController;
 |
 */
 
-Route::get('/', [CategoryController::class, 'index']);
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/master', [MasterController::class, 'index']);
 Route::get('/master/addmenu', [RouterController::class, 'addMenu']);
 Route::get('/master/editmenu', [RouterController::class, 'editMenu']);
 Route::get('/master/addcategory', [RouterController::class, 'addCategory']);
 Route::get('/personal/addpersonal', [RouterController::class, 'addPersonal']);
 Route::get('/personal/editpersonal', [RouterController::class, 'editPersonal']);
 
+//Home
+Route::get('/', [CategoryController::class, 'index']);
+
 //Login
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
+//Categories
+Route::get('/categories', [CategoryController::class, 'index']);
+
 //Personal
 Route::post('/addpersonal', [PersonalController::class, 'store']);
 Route::get('/personal', [PersonalController::class, 'show']);
 Route::get('/personal/delete/{id}', [PersonalController::class, 'destroy']);
+
+//Master
+Route::get('/master', [MasterController::class, 'index']);
 
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);

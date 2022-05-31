@@ -31,9 +31,8 @@
                                 <b>Are you sure you want to leave {{ Session::get('name') }} ?</b>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <a href="/logout">
-                                    <button type="button" class="btn btn-primary">Logout</button></a>
+                                <a href="/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </div>
