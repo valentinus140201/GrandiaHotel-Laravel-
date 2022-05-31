@@ -48,10 +48,14 @@
     </table>
 </div>
 @if (Session::get('type') == 'admin')
-<div id="addmenu" class="ms-5 ps-5">
-    <a href="/master/addcategory"><i class="bi bi-plus-circle-fill pe-2 ms-4"> Add Category</i></a>
-    <a href="/master/addmenu"><i class="bi bi-plus-circle-fill pe-2"> Add Menu</i></a>
-</div>
+<ul class="nav justify-content-end me-5 pe-4">
+    <li class="nav-item">
+        <a href="/master/addcategory" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Category</i></a>
+    </li>
+    <li class="nav-item">
+        <a href="/master/addmenu" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Menu</i></a>
+    </li>
+</ul>
 @endif
 
 @endsection

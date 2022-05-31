@@ -12,6 +12,13 @@ class Category extends Model
         'image'
     ];
 
+    public function scopeFilter($query, array $filters)
+    {
+        if (request('search')) {
+            return $query->where('type', 'like', '%' . request('search') . '%');
+        }
+    }
+
     protected function menus()
     {
         return $this->hasMany('App\Menu', 'category_id');

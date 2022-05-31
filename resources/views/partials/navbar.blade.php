@@ -11,9 +11,13 @@
             @endif
         </ul>
         @if (Session::get('id') != '')
-        <ul class="nav">
-            <h6 class="m-2">Welcome back , {{ Session::get('name') }}</h6>
-            <li class="nav-item"><a href="/logout" class="nav-link link-dark px-2 text-black"><b>Logout</b></a></li>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <h6 class="me-2 mt-2"><b>Welcome back , {{ Session::get('name') }}</b></h6>
+            </li>
+            <li class="nav-item">
+                <a href="/logout" class="nav-link link-dark text-light"><i class="bi bi-box-arrow-right pe-1"></i><b>Logout</b></a>
+            </li>
         </ul>
         @endif
 
@@ -24,8 +28,5 @@
         <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
             <span class="fs-4" href="/">Grandia Hotel</span>
         </a>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
     </div>
 </header>

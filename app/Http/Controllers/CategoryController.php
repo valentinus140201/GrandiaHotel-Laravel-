@@ -14,9 +14,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
+
+        // dd(request('search'));
+
         return view('categories.index', [
-            'title' => 'Categories', 'categories' => $category
+            'title' => 'Categories',
+            'categories' => Category::latest()->filter()->get()
         ]);
     }
 

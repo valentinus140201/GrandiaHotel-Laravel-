@@ -4,12 +4,13 @@
 
 <div class="album py-5 bg-light">
     <div class="container">
-        @foreach ($menus as $menu)
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->image }}" class="card-img-top">
-                    <div class="card-body">
+        @foreach($menus->chunk(4) as $menus)
+        <div class="row row-cols-auto">
+            @foreach ($menus as $menu)
+            <div class="col-3">
+                <div class="card shadow-sm mb-4">
+                    <img src=" {{ asset('storage/' . $menu->image) }}" alt="{{ $menu->image }}" class="card-img-top" height="200px">
+                    <div class=" card-body">
                         <p class="card-text">{{ $menu->name }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
@@ -31,9 +32,9 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         @endforeach
-
     </div>
 </div>
 <script>

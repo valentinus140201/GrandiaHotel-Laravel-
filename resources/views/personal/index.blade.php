@@ -47,9 +47,11 @@
     </table>
 </div>
 @if (Session::get('type') == 'admin')
-<div id="addpersonal" class="ms-5 ps-5">
-    <a href="/personal/addpersonal"><i class="bi bi-plus-circle-fill pe-2"> Add Personal</i></a>
-</div>
+<ul class="nav justify-content-end me-5 pe-4">
+    <li class="nav-item">
+        <a href="/personal/addpersonal" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Personal</i></a>
+    </li>
+</ul>
 @endif
 
 @endsection
