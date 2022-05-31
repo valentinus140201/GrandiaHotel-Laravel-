@@ -38,7 +38,7 @@
 <p class="text-center fs-4">No category found.</p>
 @endif
 
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-end me-5 pe-4 mt-5">
     {{ $categories->links() }}
 </div>
 

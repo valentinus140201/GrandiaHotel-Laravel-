@@ -13,6 +13,7 @@
     </div>
 </div>
 
+@if($users->count())
 <div class="table-responsive-lg ">
     <table class="table caption-top">
         <caption><b>List Personal</b></caption>
@@ -58,6 +59,11 @@
         </tbody>
     </table>
 </div>
+
+@else
+<p class="text-center fs-4">No row found.</p>
+@endif
+
 @if (Session::get('type') == 'admin')
 <ul class="nav justify-content-end me-5 pe-4">
     <li class="nav-item">

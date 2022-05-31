@@ -51,7 +51,7 @@ class CategoryController extends Controller
         $validateData['image'] = $request->file('image')->store('category-images');
 
         Category::create($validateData);
-        return redirect()->intended('/master');
+        return redirect()->intended('/categories');
     }
 
     /**
