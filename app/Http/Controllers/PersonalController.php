@@ -59,7 +59,7 @@ class PersonalController extends Controller
      */
     public function show()
     {
-        $user = User::all();
+        $user = User::latest()->filter(request(['search']))->paginate(10)->withQueryString();
         return view('personal.index', ['title' => 'Add Personal', 'users' => $user]);
     }
 

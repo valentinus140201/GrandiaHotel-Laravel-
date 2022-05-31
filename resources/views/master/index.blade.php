@@ -1,6 +1,18 @@
 @extends ('layouts.main')
 
 @section('container')
+
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6">
+        <form action="/master">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request('search') }}">
+                <button class="btn btn-dark" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <div class="table-responsive-lg ">
     <table class="table caption-top">
         <caption><b>List Menu</b></caption>
@@ -36,7 +48,7 @@
                     </div>
                     @if (Session::get('type') == 'admin')
                     <div id="deleteMenu">
-                        <a href="menu/delete/{{ $menu->id }}" class="w-10 py-2 mb-2 btn rounded-3">
+                        <a href="/menu/delete/{{ $menu->id }}" class="w-10 py-2 mb-2 btn rounded-3">
                             <i class="bi bi-trash3-fill"></i>
                         </a>
                     </div>
@@ -58,4 +70,7 @@
 </ul>
 @endif
 
+<div class="d-flex justify-content-end me-5 pe-4 mt-5">
+    {{ $menus->links() }}
+</div>
 @endsection

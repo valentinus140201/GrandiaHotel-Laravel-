@@ -14,9 +14,10 @@ class Category extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        if (request('search')) {
-            return $query->where('type', 'like', '%' . request('search') . '%');
-        }
+
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where('type', 'like', '%' . $search . '%');
+        });
     }
 
     protected function menus()

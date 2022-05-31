@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
         return view('categories.index', [
             'title' => 'Categories',
-            'categories' => Category::latest()->filter()->get()
+            'categories' => Category::latest()->filter(request(['search']))->paginate(10)->withQueryString()
         ]);
     }
 
