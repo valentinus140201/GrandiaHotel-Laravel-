@@ -1,4 +1,4 @@
-<nav class="py-2 border-bottom bg-dark">
+<nav class="py-2 border-bottom bg-dark sticky-top">
     <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
             <li class="nav-item"><a href="/categories" class="nav-link link-dark px-2 text-white" aria-current=" page"><b>Categories</b></a></li>

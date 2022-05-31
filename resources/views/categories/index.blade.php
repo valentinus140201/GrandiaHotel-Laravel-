@@ -24,7 +24,7 @@
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->image }}" class="card-img-top rounded-4" height="220px">
                     <div class=" card-body">
                         <h2 class="fw-normal">{{ $category->type }}</h2>
-                        <p><a class="btn btn-secondary" href="/categories/menu/{{ $category->type }}" style="background:#1E90FF;">View details &raquo;</a></p>
+                        <p><a class="btn btn-dark text-white" href="/categories/menu/{{ $category->type }}">View details &raquo;</a></p>
                     </div>
                 </div>
             </div>
