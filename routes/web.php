@@ -35,8 +35,10 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
+
 //Categories
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/searchCategories', [CategoryController::class, 'search']);
 
 //Personal
 Route::post('/addpersonal', [PersonalController::class, 'store']);
@@ -45,6 +47,8 @@ Route::get('/personal/delete/{id}', [PersonalController::class, 'destroy']);
 
 //Master
 Route::get('/master', [MasterController::class, 'index']);
+Route::get('/searchMenu', [MasterController::class, 'search']);
+
 
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);

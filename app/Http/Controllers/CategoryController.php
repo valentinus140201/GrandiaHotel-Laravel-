@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class CategoryController extends Controller
 {
@@ -21,6 +22,12 @@ class CategoryController extends Controller
             'title' => 'Categories',
             'categories' => Category::latest()->filter(request(['search']))->paginate(8)->withQueryString()
         ]);
+    }
+
+    public function search(Request $request){
+        // dd($request);
+        $category = Category::where('type', 'like', "%{$request->search}%")->paginate(10);
+        return view('categories.index', ['categories' => $category, 'title' => 'Search for '.$request->search]);
     }
 
     /**
