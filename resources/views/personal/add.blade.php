@@ -46,9 +46,9 @@
                 <div class="form mb-2">
                     <select name="type" id="type" class=" form-select" aria-label="Default select example">
                         <option selected>Choose Type User</option>
-                        @foreach ($users as $user)
-                        <option value="{{ $user->type }}">{{ $user->type }}</option>
-                        @endforeach
+                        <option value="Admin">Admin</option>
+                        <option value="Supervisor">Supervisor</option>
+                        <option value="Cashier">Cashier</option>
                     </select>
                 </div>
                 <!-- <div class="form-floating">

@@ -23,7 +23,6 @@
                 <th scope="col">Name</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
                 <th scope="col">Type User</th>
                 <th scope="col">Status Login</th>
                 <!-- <th scope="col">Expired</th> -->
@@ -37,7 +36,6 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->username}}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->password }}</td>
                 <td>{{ $user->type }}</td>
                 <td>{{ $user->is_login }}</td>
                 <td>
