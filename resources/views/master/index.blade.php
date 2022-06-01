@@ -4,9 +4,10 @@
 
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
-        <form action="/master">
+        <form action="/searchMaster" method="GET">
+            @csrf
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request('search') }}">
+                <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
                 <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
