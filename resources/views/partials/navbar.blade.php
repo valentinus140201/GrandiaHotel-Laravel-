@@ -1,15 +1,21 @@
-<nav class="py-2 border-bottom bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg border-bottom bg-dark sticky-top">
     <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="/categories" class="nav-link link-dark px-2 text-white" aria-current=" page"><b>Categories</b></a></li>
-            @if (Session::get('type') == 'admin' || Session::get('type') == 'supervisor')
-            <li class="nav-item"><a href="/master" class="nav-link link-dark px-2 text-white" aria-current="page"><b>Master</b></a></li>
-            @if (Session::get('type') == 'admin')
-            <li class="nav-item"><a href="/personal" class="nav-link link-dark px-2 text-white" aria-current="page"><b>Personal</b></a></li>
-            @endif
+        <button class="navbar-toggler btn btn-secondary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            @endif
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/categories" class="nav-link link-dark text-white" aria-current=" page"><b>Categories</b></a></li>
+                @if (Session::get('type') == 'admin' || Session::get('type') == 'supervisor')
+                <li class="nav-item"><a href="/master" class="nav-link link-dark text-white" aria-current="page"><b>Master</b></a></li>
+                @if (Session::get('type') == 'admin')
+                <li class="nav-item"><a href="/personal" class="nav-link link-dark text-white" aria-current="page"><b>Personal</b></a></li>
+                @endif
+                @endif
+            </ul>
+        </div>
+
         @if (Session::get('id') != '')
         <ul class="nav justify-content-end">
             <li class="nav-item">

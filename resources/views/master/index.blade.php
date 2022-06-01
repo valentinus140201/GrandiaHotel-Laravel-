@@ -15,8 +15,8 @@
 
 
 @if($menus->count())
-<div class="table-responsive-lg ">
-    <table class="table caption-top">
+<div class="table-responsive-lg">
+    <table class="table caption-top table-bordered">
         <caption><b>List Menu</b></caption>
         <thead>
             <tr>
@@ -68,7 +68,7 @@
 
 
 @if (Session::get('type') == 'admin')
-<ul class="nav justify-content-end me-5 pe-4">
+<ul class="nav justify-content-end me-5 pe-4 mt-4">
     <li class="nav-item">
         <a href="/master/addcategory" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Category</i></a>
     </li>

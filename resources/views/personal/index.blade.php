@@ -14,10 +14,10 @@
 </div>
 
 @if($users->count())
-<div class="table-responsive-lg ">
-    <table class="table caption-top">
+<div class="table-responsive-xl d-flex justify-content-center">
+    <table class="table caption-top table-bordered">
         <caption><b>List Personal</b></caption>
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
@@ -63,7 +63,7 @@
 @endif
 
 @if (Session::get('type') == 'admin')
-<ul class="nav justify-content-end me-5 pe-4">
+<ul class="nav justify-content-end me-5 pe-5">
     <li class="nav-item">
         <a href="/personal/addpersonal" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Personal</i></a>
     </li>

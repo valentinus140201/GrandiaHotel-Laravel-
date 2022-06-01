@@ -17,9 +17,9 @@
 <div class="album py-5 bg-dark mb-4">
     <div class="container">
         @foreach($categories->chunk(4) as $categories1)
-        <div class="row row-cols-auto">
+        <div class="row row-cols-auto justify-content-center">
             @foreach ($categories1 as $category)
-            <div class="col-3">
+            <div class="col-md-3">
                 <div class="card shadow-sm mb-4 rounded-4">
                     <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->image }}" class="card-img-top rounded-4" height="220px">
                     <div class=" card-body">
