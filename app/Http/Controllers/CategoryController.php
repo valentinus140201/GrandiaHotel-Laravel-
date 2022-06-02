@@ -24,10 +24,11 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         // dd($request);
         $category = Category::where('type', 'like', "%{$request->search}%")->paginate(10);
-        return view('categories.index', ['categories' => $category, 'title' => 'Search for '.$request->search]);
+        return view('categories.index', ['categories' => $category, 'title' => 'Search for ' . $request->search]);
     }
 
     /**

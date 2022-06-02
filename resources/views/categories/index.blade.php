@@ -5,10 +5,10 @@
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
         <form action="/searchCategories" method="GET">
-            @csrf
+            {{ csrf_field() }}
             <div class="input-group mb-3">
-                <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
-                <button class="btn btn-dark" type="submit">Search</button>
+                <input type="search" class="form-control me-2" placeholder="Search" id="search" name="search" value="{{ request('search') }}">
+                <button class=" btn btn-dark" type="submit">Search</button>
             </div>
         </form>
     </div>
@@ -18,11 +18,11 @@
 <div class="album py-5 bg-dark mb-4">
     <div class="container">
         @foreach($categories->chunk(4) as $categories1)
-        <div class="row row-cols-auto justify-content-center">
+        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
             @foreach ($categories1 as $category)
-            <div class="col-md-3">
-                <div class="card shadow-sm mb-4 rounded-4">
-                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->image }}" class="card-img-top rounded-4" height="220px">
+            <div class="col">
+                <div class=" card shadow-sm mb-4 rounded-4">
+                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->image }}" class="card-img-top rounded-4 img-responsive" height="220px">
                     <div class=" card-body">
                         <h2 class="fw-normal">{{ $category->type }}</h2>
                         <p><a class="btn btn-dark text-white" href="/categories/menu/{{ $category->type }}">View details &raquo;</a></p>

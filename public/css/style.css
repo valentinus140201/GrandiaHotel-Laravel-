@@ -68,3 +68,9 @@
   margin: 2px auto;
   z-index: 1100 !important;
 }
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+}

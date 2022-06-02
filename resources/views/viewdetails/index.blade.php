@@ -4,25 +4,26 @@
 
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
-        <form action="/searchMenu" method="GET">
-            @csrf
+        <form action="/searchViewDetails" method="GET">
+            {{ csrf_field() }}
             <div class="input-group mb-3">
                 <input type="hidden" name='type' id='type' value="{{ $menus[0]->category  }}">
-                <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
+                <input type="search" class="form-control me-2" placeholder="Search" id="search" name="search" value="{{ request('search') }}">
                 <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
     </div>
 </div>
+
 @if($menus->count())
 <div class="album py-5 bg-dark">
     <div class="container">
         @foreach($menus->chunk(4) as $menus1)
-        <div class="row row-cols-auto">
+        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
             @foreach ($menus1 as $menu)
-            <div class="col-3">
+            <div class="col">
                 <div class="card shadow-sm mb-4">
-                    <img src=" {{ asset('storage/' . $menu->image) }}" alt="{{ $menu->image }}" class="card-img-top" height="200px">
+                    <img src=" {{ asset('storage/' . $menu->image) }}" alt="{{ $menu->image }}" class="card-img-top img-responsive" height="200px">
                     <div class=" card-body">
                         <p class="card-text">{{ $menu->name }}</p>
                         <div class="d-flex justify-content-between align-items-center">

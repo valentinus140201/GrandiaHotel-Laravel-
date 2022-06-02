@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg border-bottom bg-dark sticky-top">
     <div class="container d-flex flex-wrap">
-        <button class="navbar-toggler btn btn-secondary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar navbar-dark navbar-toggler-icon "></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">

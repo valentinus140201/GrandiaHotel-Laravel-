@@ -35,25 +35,24 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-
 //Categories
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/addcategory', [CategoryController::class, 'store']);
 Route::get('/searchCategories', [CategoryController::class, 'search']);
 
 //Personal
 Route::post('/addpersonal', [PersonalController::class, 'store']);
 Route::get('/personal', [PersonalController::class, 'show']);
 Route::get('/personal/delete/{id}', [PersonalController::class, 'destroy']);
+Route::get('/searchPersonal', [PersonalController::class, 'search']);
 
 //Master
 Route::get('/master', [MasterController::class, 'index']);
-Route::get('/searchMenu', [MasterController::class, 'search']);
+Route::get('/searchViewDetails', [MasterController::class, 'search']);
 
 
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);
 Route::get('/categories/menu/{category}', [MenuController::class, 'show']);
 Route::get('/menu/delete/{id}', [MenuController::class, 'destroy']);
-
-//Category
-Route::post('/addcategory', [CategoryController::class, 'store']);
+Route::get('/searchMaster', [MenuController::class, 'search']);

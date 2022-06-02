@@ -20,10 +20,11 @@ class MasterController extends Controller
         }
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         // dd($request);
-        $menu = Menu::where('name', 'like', "%{$request->search}%")->where('category', '=', $request->type)->paginate(10);
+        $menu = Menu::where('name', 'like', "%{$request->search}%")->where('category', '=', $request->type)->paginate(10)->withQueryString();
         // dd($menu);
-        return view('viewdetails.index', ['menus' => $menu, 'title' => 'Search for '.$request->search]);
+        return view('viewdetails.index', ['menus' => $menu, 'title' => 'Search for ' . $request->search]);
     }
 }

@@ -17,6 +17,14 @@ class PersonalController extends Controller
         //
     }
 
+
+    public function search(Request $request)
+    {
+        // dd($request);
+        $personal = User::where('name', 'like', "%{$request->search}%")->paginate(10);
+        return view('personal.index', ['users' => $personal, 'title' => 'Search for ' . $request->search]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

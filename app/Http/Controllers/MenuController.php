@@ -18,6 +18,13 @@ class MenuController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        // dd($request);
+        $menu = Menu::where('name', 'like', "%{$request->search}%")->paginate(10);
+        return view('master.index', ['menus' => $menu, 'title' => 'Search for ' . $request->search]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

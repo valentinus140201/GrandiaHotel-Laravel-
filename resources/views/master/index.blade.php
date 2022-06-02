@@ -5,9 +5,9 @@
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
         <form action="/searchMaster" method="GET">
-            @csrf
+            {{ csrf_field() }}
             <div class="input-group mb-3">
-                <input type="search" class="form-control me-2" placeholder ="Search" id="search" name="search">
+                <input type="search" class="form-control me-2" placeholder="Search" id="search" name="search" value="{{ request('search') }}">
                 <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
@@ -16,10 +16,10 @@
 
 
 @if($menus->count())
-<div class="table-responsive-lg">
+<div class="table-responsive-xl d-flex justify-content-center">
     <table class="table caption-top table-bordered">
         <caption><b>List Menu</b></caption>
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Kategori</th>
@@ -69,7 +69,7 @@
 
 
 @if (Session::get('type') == 'admin')
-<ul class="nav justify-content-end me-5 pe-4 mt-4">
+<ul class="nav justify-content-end me-5 pe-5">
     <li class="nav-item">
         <a href="/master/addcategory" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Category</i></a>
     </li>
