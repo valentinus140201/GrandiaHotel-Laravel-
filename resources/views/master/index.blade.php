@@ -69,17 +69,17 @@
 
 
 @if (Session::get('type') == 'admin')
-<ul class="nav justify-content-end me-5 pe-5">
+<ul class="nav justify-content-end">
     <li class="nav-item">
         <a href="/master/addcategory" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Category</i></a>
     </li>
     <li class="nav-item">
-        <a href="/master/addmenu" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Menu</i></a>
+        <a href="/master/addmenu" class="nav-link text-dark me-3"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Menu</i></a>
     </li>
 </ul>
 @endif
 
-<div class="d-flex justify-content-end me-5 pe-4 mt-5">
+<div class="d-flex justify-content-end me-5 mt-5">
     {{ $menus->links() }}
 </div>
 @endsection

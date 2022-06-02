@@ -40,7 +40,7 @@
 .table {
   text-align:center;
   position: relative;
-  width: 1300px;
+  width: 1450px;
 }
 
 .modal-sheet .modal-dialog {
@@ -69,8 +69,6 @@
   z-index: 1100 !important;
 }
 
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
+body {
+  font-family: 'Source Sans Pro';
 }

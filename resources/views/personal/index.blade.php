@@ -64,14 +64,14 @@
 @endif
 
 @if (Session::get('type') == 'admin')
-<ul class="nav justify-content-end me-5 pe-5">
+<ul class="nav justify-content-end me-3">
     <li class="nav-item">
         <a href="/personal/addpersonal" class="nav-link text-dark"><i class="bi bi-plus-circle-fill border border-primary p-2 rounded-4"> Add Personal</i></a>
     </li>
 </ul>
 @endif
 
-<div class="d-flex justify-content-end me-5 pe-4 mt-5">
+<div class="d-flex justify-content-end me-5 mt-5">
     {{ $users->links() }}
 </div>
 
