@@ -56,3 +56,5 @@ Route::post('/addmenu', [MenuController::class, 'store']);
 Route::get('/categories/menu/{category}', [MenuController::class, 'show']);
 Route::get('/menu/delete/{id}', [MenuController::class, 'destroy']);
 Route::get('/searchMaster', [MenuController::class, 'search']);
+// Route::get('/editMasterMenu', [MenuController::class, 'getByID']);
+// Route::post('/editMasterMenu', [MenuController::class, 'update']);

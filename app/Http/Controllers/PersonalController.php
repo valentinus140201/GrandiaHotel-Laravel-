@@ -103,10 +103,12 @@ class PersonalController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        $user = User::all();
-        // dd($user);
-        return view('personal.index', ["title" =>  'Personal', 'users' => $user]);
+        $user = User::where('id', $id)->first();
+
+        if ($user != null) {
+            $user->delete();
+            return redirect()->intended('/personal')->with(['message' => 'Successfully deleted!!']);
+        }
+        return redirect()->intended('/personal')->with(['message' => 'Wrong ID!!']);
     }
 }

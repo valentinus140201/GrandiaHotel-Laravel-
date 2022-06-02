@@ -29,8 +29,9 @@ class RouterController extends Controller
     public function editMenu()
     {
         $category = Category::all();
+        $user = User::all();
         return view('master.update', [
-            'title' => 'Update Menu', 'categories' => $category,
+            'title' => 'Update Menu', 'categories' => $category, 'users' => $user
         ]);
     }
 

@@ -95,9 +95,18 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menu)
+    public function update(Request $request)
     {
-        //
+        $menu = Menu::where('id', $request->id);
+        $temp_menu = $menu;
+        $menu->name = $request->name;
+        $menu->harga = $request->harga;
+        $menu->image = $request->image;
+        $menu->category = $request->category;
+        $menu->promo_awal = $request->promo_awal;
+        $menu->promo_akhir = $request->promo_akhir;
+        $menu->harga_promo = $request->harga_promo;
+        $menu->save();
     }
 
     /**
@@ -108,10 +117,12 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menu = Menu::find($id);
-        $menu->delete();
-        $menu = Menu::all();
-        // dd($menu);
-        return view('master.index', ["title" =>  'Master', 'menus' => $menu]);
+        $menu = Menu::where('id', $id)->first();
+
+        if ($menu != null) {
+            $menu->delete();
+            return redirect()->intended('/master')->with(['message' => 'Successfully deleted!!']);
+        }
+        return redirect()->intended('/master')->with(['message' => 'Wrong ID!!']);
     }
 }
