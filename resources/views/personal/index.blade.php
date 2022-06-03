@@ -59,7 +59,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body d-flex justify-content-start">
-                                    <b>Are you sure you want to delete {{ $user->name }} ?</b>
+                                    <b>Are you sure you want to delete ?</b>
                                 </div>
                                 <div class="modal-footer">
                                     <a href="/personal/delete/{{ $user->id }}"><button type="submit" class="btn btn-primary">Yes</button></a>
