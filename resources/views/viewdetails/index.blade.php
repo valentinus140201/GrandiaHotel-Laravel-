@@ -7,7 +7,9 @@
         <form action="/searchViewDetails" method="GET">
             {{ csrf_field() }}
             <div class="input-group mb-3">
-                <input type="hidden" name="category" id="category" value="{{ $menus[0]->category }}">
+                @if (count($menus) > 0)
+                    <input type="hidden" name="category" id="category" value="{{ $menus[0]->category }}">
+                @endif
                 <input type="search" class="form-control" placeholder="Search..." id="search" name="search" value="{{ request('search') }}">
                 <button class="btn btn-dark" type="submit">Search</button>
             </div>
