@@ -32,46 +32,30 @@
         </thead>
         <tbody>
             @foreach ($users as $user)
-                @if ($user->id != Session::get('id'))
-                    <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->username}}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->type }}</td>
-                        <td>{{ $user->is_login }}</td>
-                        <td>
-                            <div id="editPersonal">
-                                <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/personal/editPersonal/{{ $user->id}}">
-                                        <i class="bi bi-pencil"></i></a>
-                                </h1>
-                            </div>
-                            @if (Session::get('type') == 'admin')
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#deletePersonal" class="w-10 py-2 mb-2 btn rounded-3">
-                                <i class="bi bi-trash3-fill"></i>
-                            </button>
-                            <!-- Modal -->
-                            @endif
-                            <div class="modal fade" id="deletePersonal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Delete Personal</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body d-flex justify-content-start">
-                                            <b>Are you sure you want to delete {{ $user->name }} ?</b>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="/personal/deletePersonal/{{ $user->id }}"><button type="submit" class="btn btn-primary">Yes</button></a>
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                @endif
+            @if ($user->id != Session::get('id'))
+            <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->username}}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->type }}</td>
+                <td>{{ $user->is_login }}</td>
+                <td>
+                    <div id="editPersonal">
+                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/personal/editPersonal/{{ $user->id}}">
+                                <i class="bi bi-pencil"></i></a>
+                        </h1>
+                    </div>
+                    @if (Session::get('type') == 'admin')
+                    <div id="deletePersonal">
+                        <a href="/personal/deletePersonal/{{ $user->id }}" class="w-10 py-2 mb-2 btn rounded-3">
+                            <i class="bi bi-trash3-fill"></i>
+                        </a>
+                    </div>
+                    @endif
+                </td>
+            </tr>
+            @endif
             @endforeach
         </tbody>
     </table>
