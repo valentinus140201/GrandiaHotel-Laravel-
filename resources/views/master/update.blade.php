@@ -9,13 +9,13 @@
             <form action="/editmenu/{{ $menu->id }}" method="post" enctype="multipart/form-data">
                 @method('put')
                 {{ csrf_field() }}
+                <input type="hidden" name="id" id="id" value="{{ $menu->id }}">
                 <div class="form mb-2">
                     <select name="category" id="category" class=" form-select" aria-label="Default select example">
                         <option selected>Choose Category</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category->type }}">{{ $category->type }}</option>
                         @endforeach
-
                     </select>
                 </div>
                 <div class="form-floating">
