@@ -23,7 +23,7 @@ class MasterController extends Controller
     public function search(Request $request)
     {
         // dd($request);
-        $menu = Menu::where('name', 'like', "%{$request->search}%")->where('category', '=', $request->type)->paginate(10)->withQueryString();
+        $menu = Menu::where('name', 'like', "%{$request->search}%")->where('category', '=', $request->category)->paginate(10);
         // dd($menu);
         return view('viewdetails.index', ['menus' => $menu, 'title' => 'Search for ' . $request->search]);
     }
