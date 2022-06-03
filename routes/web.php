@@ -49,6 +49,7 @@ Route::get('/searchPersonal', [PersonalController::class, 'search']);
 //Master
 Route::get('/master', [MasterController::class, 'index']);
 Route::get('/searchViewDetails', [MasterController::class, 'search']);
+Route::get('/editMenu/{id}', [MenuController::class, 'search']);
 
 
 //Menu
