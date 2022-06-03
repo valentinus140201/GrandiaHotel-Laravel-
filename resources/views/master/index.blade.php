@@ -65,7 +65,7 @@
                                     <b>Are you sure you want to delete {{ $menu->name }} ?</b>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="/master/delete/{{ $menu->id }}"><button type="submit" class="btn btn-primary">Yes</button></a>
+                                    <a href="/master/deleteMenu/{{ $menu->id }}"><button type="submit" class="btn btn-primary">Yes</button></a>
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
