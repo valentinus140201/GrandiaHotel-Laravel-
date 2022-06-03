@@ -73,7 +73,7 @@ class MenuController extends Controller
      */
     public function show($category)
     {
-        $menu = Menu::where('category', $category)/*->latest()->filter(request(['search']))*/->paginate(8)->withQueryString();
+        $menu = Menu::where('category', $category)->paginate(8)->withQueryString();
         // dd($menu);
         // masalah klo gabungin where sama latest()
         return view('viewdetails.index', ['title' =>  $category, 'menus' => $menu]);
@@ -124,7 +124,7 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        Menu::where('id', $id)->delete();
+        $menu = Menu::where('id', $id)->get();
         return redirect()->intended('/master');
     }
 }
