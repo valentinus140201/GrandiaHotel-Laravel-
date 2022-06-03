@@ -5,8 +5,7 @@
     <div class="col-lg-5">
         <main class="form-update-menu">
             <h1 class="h3 mb-3 fw-normal">Update Menu Form</h1>
-            @foreach ($menus as $menu)
-            <form action="/editmenu/{{ $menu->id }}" method="post" enctype="multipart/form-data">
+            <form action="/updateMenu" method="post" enctype="multipart/form-data">
                 @method('put')
                 {{ csrf_field() }}
                 <input type="hidden" name="id" id="id" value="{{ $menu->id }}">
@@ -19,7 +18,7 @@
                     </select>
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="name" class="form-control @error('namaMenu')is-invalid @enderror" id="name" placeholder="Nama Menu" required value="{{ $menu->name }}">
+                    <input type="text" name="name" class="form-control @error('namaMenu')is-invalid @enderror" id="name" placeholder="{{ $menu->name }}" required value="{{ $menu->name }}">
                     <label for="namaMenu">Nama Menu</label>
                     @error('namaMenu')
                     <div class="invalid-feedback">
@@ -28,7 +27,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="description" class="form-control @error('deskripsi')is-invalid @enderror" id="description" placeholder="Deskripsi" required value="{{ $menu->description }}">
+                    <input type="text" name="description" class="form-control @error('deskripsi')is-invalid @enderror" id="description" placeholder="{{ $menu->description }}" required value="{{ $menu->description }}">
                     <label for="deskripsi">Deskripsi</label>
                     @error('deskripsi')
                     <div class="invalid-feedback">
@@ -41,7 +40,7 @@
                     <input class="form-control" type="file" id="image" name="image" value="{{ $menu->image }}">
                 </div>
                 <div class=" form-floating">
-                    <input type="number" name="harga" class="form-control @error('harga')is-invalid @enderror" id="harga" placeholder="Harga" required value="{{ $menu->harga }}">
+                    <input type="number" name="harga" class="form-control @error('harga')is-invalid @enderror" id="harga" placeholder="{{ $menu->harga }}" required value="{{ $menu->harga }}">
                     <label for="harga">Harga</label>
                     @error('harga')
                     <div class="invalid-feedback">
@@ -50,7 +49,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="date" name="promo_awal" class="form-control @error('promoAwal')is-invalid @enderror" id="promo_awal" placeholder="Promo Awal" required value="{{ $menu->promo_awal }}">
+                    <input type="date" name="promo_awal" class="form-control @error('promoAwal')is-invalid @enderror" id="promo_awal" placeholder="{{ $menu->promo_awal }}" required value="{{ $menu->promo_awal }}">
                     <label for="promoAwal">Promo Awal</label>
                     @error('promoAwal')
                     <div class="invalid-feedback">
@@ -59,7 +58,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="date" name="promo_akhir" class="form-control @error('promoAkhir')is-invalid @enderror" id="promo_akhir" placeholder="Promo Akhir" required value="{{ $menu->promo_akhir }}">
+                    <input type="date" name="promo_akhir" class="form-control @error('promoAkhir')is-invalid @enderror" id="promo_akhir" placeholder="{{ $menu->promo_akhir }}" required value="{{ $menu->promo_akhir }}">
                     <label for="promoAkhir">Promo Akhir</label>
                     @error('promoAkhir')
                     <div class="invalid-feedback">
@@ -68,7 +67,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="number" name="harga_promo" class="form-control @error('hargaPromo')is-invalid @enderror" id="harga_promo" placeholder="Harga Promo" required value="{{ $menu->harga_promo }}">
+                    <input type="number" name="harga_promo" class="form-control @error('hargaPromo')is-invalid @enderror" id="harga_promo" placeholder="{{ $menu->harga_promo }}" required value="{{ $menu->harga_promo }}">
                     <label for="hargaPromo">Harga Promo</label>
                     @error('hargaPromo')
                     <div class="invalid-feedback">
@@ -76,9 +75,26 @@
                     </div>
                     @enderror
                 </div>
-                <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">SAVE CHANGE</button>
+                <button class="w-100 btn btn-lg btn-primary mt-3" type="button" data-bs-toggle="modal" data-bs-target="#updateMenu">SAVE CHANGE</button>
+                <!-- Modal -->
+                <div class="modal fade" id="updateMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body d-flex justify-content-start">
+                                <b>Are you sure you want to save this menu ?</b>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Yes</button></a>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
-            @endforeach
         </main>
     </div>
 </div>

@@ -22,10 +22,11 @@ use App\Http\Controllers\ViewDetailsController;
 */
 
 Route::get('/master/addmenu', [RouterController::class, 'addMenu']);
-Route::get('/master/editmenu', [RouterController::class, 'editMenu']);
+Route::get('/master/editMenu/{id}', [RouterController::class, 'editMenu']);
 Route::get('/master/addcategory', [RouterController::class, 'addCategory']);
+
 Route::get('/personal/addpersonal', [RouterController::class, 'addPersonal']);
-Route::get('/personal/editpersonal', [RouterController::class, 'editPersonal']);
+Route::get('/personal/editPersonal/{id}', [RouterController::class, 'editPersonal']);
 
 //Home
 Route::get('/', [CategoryController::class, 'index']);
@@ -45,16 +46,16 @@ Route::post('/addpersonal', [PersonalController::class, 'store']);
 Route::get('/personal', [PersonalController::class, 'show']);
 Route::get('/personal/delete/{id}', [PersonalController::class, 'destroy']);
 Route::get('/searchPersonal', [PersonalController::class, 'search']);
+Route::put('/updatePersonal', [PersonalController::class, 'update']);
 
 //Master
 Route::get('/master', [MasterController::class, 'index']);
 Route::get('/searchViewDetails', [MasterController::class, 'search']);
 Route::get('/editMenu/{id}', [MenuController::class, 'search']);
 
-
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);
 Route::get('/categories/menu/{category}', [MenuController::class, 'show']);
 Route::get('/master/delete/{id}', [MenuController::class, 'destroy']);
 Route::get('/searchMaster', [MenuController::class, 'search']);
-Route::put('/editmenu/{id}/edit', [MenuController::class, 'update']);
+Route::put('/updateMenu', [MenuController::class, 'update']);

@@ -44,7 +44,11 @@
                 <td>{{ $menu->harga_promo }}</td>
                 <td>
                     <div id="editMenu">
+<<<<<<< HEAD
                         <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/editMenu/{{ $menu->id }}">
+=======
+                        <h1 class="w-10 py-2 mb-2 btn rounded-3"><a href="/master/editMenu/{{ $menu->id}}">
+>>>>>>> 92da4be550ff2ec55f03871db3e66262c884af92
                                 <i class="bi bi-pencil"></i></a>
                         </h1>
                     </div>

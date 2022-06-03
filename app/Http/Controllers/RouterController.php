@@ -26,15 +26,15 @@ class RouterController extends Controller
         ]);
     }
 
-    public function editMenu()
+    public function editMenu($id)
     {
-        $menu = Menu::all();
-        $category = Category::all();
+        $menu = Menu::find($id);
+        $categories = Category::all();
 
         return view('master.update', [
-            'menus' => $menu,
-            'categories' => $category,
-            'title' => 'Update Menu'
+            'menu' => $menu,
+            'title' => 'Update Menu ' . $menu->name,
+            'categories' => $categories
         ]);
     }
 
@@ -46,10 +46,13 @@ class RouterController extends Controller
         ]);
     }
 
-    public function editPersonal()
+    public function editPersonal($id)
     {
+        $user = User::find($id);
+
         return view('personal.update', [
-            'title' => 'Update Personal'
+            'user' => $user,
+            'title' => 'Update Personal' . $user->name
         ]);
     }
 }
