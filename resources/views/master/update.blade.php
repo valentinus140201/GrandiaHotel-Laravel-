@@ -5,7 +5,9 @@
     <div class="col-lg-5">
         <main class="form-update-menu">
             <h1 class="h3 mb-3 fw-normal">Update Menu Form</h1>
-            <form action="/editmenu" method="post" enctype="multipart/form-data">
+            @foreach ($menus as $menu)
+            <form action="/editmenu/{{ $menu->id }}" method="post" enctype="multipart/form-data">
+                @method('put')
                 {{ csrf_field() }}
                 <div class="form mb-2">
                     <select name="category" id="category" class=" form-select" aria-label="Default select example">
@@ -76,6 +78,7 @@
                 </div>
                 <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">SAVE CHANGE</button>
             </form>
+            @endforeach
         </main>
     </div>
 </div>

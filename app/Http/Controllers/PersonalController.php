@@ -103,7 +103,8 @@ class PersonalController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::where('id', $id)->first();
+
+        $user = User::where('id', $id);
 
         if ($user != null) {
             $user->delete();

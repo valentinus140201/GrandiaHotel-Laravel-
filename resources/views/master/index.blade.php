@@ -7,13 +7,12 @@
         <form action="/searchMaster" method="GET">
             {{ csrf_field() }}
             <div class="input-group mb-3">
-                <input type="search" class="form-control me-2" placeholder="Search" id="search" name="search" value="{{ request('search') }}">
+                <input type="search" class="form-control" placeholder="Search..." id="search" name="search" value="{{ request('search') }}">
                 <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
     </div>
 </div>
-
 
 @if($menus->count())
 <div class="table-responsive-xl d-flex justify-content-center">
@@ -50,12 +49,28 @@
                         </h1>
                     </div>
                     @if (Session::get('type') == 'admin')
-                    <div id="deleteMenu">
-                        <a href="/menu/delete/{{ $menu->id }}" class="w-10 py-2 mb-2 btn rounded-3">
-                            <i class="bi bi-trash3-fill"></i>
-                        </a>
-                    </div>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#deleteMenu" class="w-10 py-2 mb-2 btn rounded-3">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
                     @endif
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Delete Menu</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body d-flex justify-content-start">
+                                    <b>Are you sure you want to delete {{ $menu->name }} ?</b>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="/master/delete/{{ $menu->id }}"><button type="submit" class="btn btn-primary">Yes</button></a>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
             @endforeach

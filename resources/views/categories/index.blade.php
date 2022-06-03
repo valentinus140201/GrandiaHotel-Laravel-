@@ -7,8 +7,8 @@
         <form action="/searchCategories" method="GET">
             {{ csrf_field() }}
             <div class="input-group mb-3">
-                <input type="search" class="form-control me-2" placeholder="Search" id="search" name="search" value="{{ request('search') }}">
-                <button class=" btn btn-dark" type="submit">Search</button>
+                <input type="search" class="form-control" placeholder="Search..." id="search" name="search" value="{{ request('search') }}">
+                <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
     </div>

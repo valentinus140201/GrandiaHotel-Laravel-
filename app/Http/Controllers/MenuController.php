@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Menu;
 use App\Models\Promo;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -83,7 +85,7 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu)
+    public function edit()
     {
         //
     }
@@ -95,18 +97,23 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Menu $menu)
     {
-        $menu = Menu::where('id', $request->id);
-        $temp_menu = $menu;
-        $menu->name = $request->name;
-        $menu->harga = $request->harga;
-        $menu->image = $request->image;
-        $menu->category = $request->category;
-        $menu->promo_awal = $request->promo_awal;
-        $menu->promo_akhir = $request->promo_akhir;
-        $menu->harga_promo = $request->harga_promo;
-        $menu->save();
+        $validateData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'harga' => 'required',
+            'image' => 'image|file|max:3072',
+            'category' => 'required',
+            'promo_awal' => 'required',
+            'promo_akhir' => 'required',
+            'harga_promo' => 'required',
+        ]);
+
+        $validateData['image'] = $request->file('image')->store('menu-images');
+
+        Menu::where('id', $menu->id)->update($validateData);
+        return redirect()->intended('/master');
     }
 
     /**
@@ -117,12 +124,7 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menu = Menu::where('id', $id)->first();
-
-        if ($menu != null) {
-            $menu->delete();
-            return redirect()->intended('/master')->with(['message' => 'Successfully deleted!!']);
-        }
-        return redirect()->intended('/master')->with(['message' => 'Wrong ID!!']);
+        Menu::where('id', $id)->delete();
+        return redirect()->intended('/master');
     }
 }
