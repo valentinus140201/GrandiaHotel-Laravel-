@@ -51,6 +51,7 @@ Route::put('/updatePersonal', [PersonalController::class, 'update']);
 //Master
 Route::get('/master', [MasterController::class, 'index']);
 Route::get('/searchViewDetails', [MasterController::class, 'search']);
+Route::get('/editMenu/{id}', [MenuController::class, 'search']);
 
 //Menu
 Route::post('/addmenu', [MenuController::class, 'store']);
