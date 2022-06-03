@@ -90,9 +90,20 @@ class PersonalController extends Controller
      * @param  \App\Models\Personal  $personal
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $personal)
+    public function update(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'username' => 'required', 'min:5', 'max:255', 'unique:users',
+            'email' => 'required|email:dns|unique:users',
+            'password' => 'required|min:5|max:255',
+            'type' => 'required',
+        ]);
+
+        $validateData['password'] = md5($validateData['password']);
+
+        User::where('id', $request->id)->update($validateData);
+        return redirect()->intended('/personal');
     }
 
     /**

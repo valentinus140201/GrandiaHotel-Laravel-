@@ -97,7 +97,7 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menu)
+    public function update(Request $request)
     {
         $validateData = $request->validate([
             'name' => 'required',
@@ -112,7 +112,7 @@ class MenuController extends Controller
 
         $validateData['image'] = $request->file('image')->store('menu-images');
 
-        Menu::where('id', $menu->id)->update($validateData);
+        Menu::where('id', $request->id)->update($validateData);
         return redirect()->intended('/master');
     }
 

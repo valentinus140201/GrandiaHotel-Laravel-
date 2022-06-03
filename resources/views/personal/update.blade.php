@@ -5,10 +5,12 @@
     <div class="col-lg-5">
         <main class="form-update-personal">
             <h1 class="h3 mb-3 fw-normal">Update Personal Form</h1>
-            <form action="/editpersonal" method="post" enctype="multipart/form-data">
+            <form action="/updatePersonal" method="post" enctype="multipart/form-data">
+                @method('put')
                 {{ csrf_field() }}
+                <input type="hidden" name="id" id="id" value="{{ $user->id }}">
                 <div class="form-floating">
-                    <input type="text" name="name" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="Name" required value="{{ $personal->name }}">
+                    <input type="text" name="name" class="form-control @error('nama')is-invalid @enderror" id="name" placeholder="{{ $user->name }}" required value="{{ $user->name }}">
                     <label for="name">Name</label>
                     @error('name')
                     <div class="invalid-feedback">
@@ -17,7 +19,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="username" class="form-control @error('username')is-invalid @enderror" id="username" placeholder="Username" required value="{{ $personal->username }}">
+                    <input type="text" name="username" class="form-control @error('username')is-invalid @enderror" id="username" placeholder="{{ $user->username }}" required value="{{ $user->username }}">
                     <label for="username">Username</label>
                     @error('username')
                     <div class="invalid-feedback">
@@ -26,7 +28,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="email" placeholder="name@example.com" required value="{{ $personal->email }}">
+                    <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="email" placeholder="{{ $user->email }}" required value="{{ $user->email }}">
                     <label for="email">Email address</label>
                     @error('email')
                     <div class="invalid-feedback">
