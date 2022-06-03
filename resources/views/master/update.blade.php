@@ -75,7 +75,25 @@
                     </div>
                     @enderror
                 </div>
-                <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">SAVE CHANGE</button>
+                <button class="w-100 btn btn-lg btn-primary mt-3" type="button" data-bs-toggle="modal" data-bs-target="#updateMenu">SAVE CHANGE</button>
+                <!-- Modal -->
+                <div class="modal fade" id="updateMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body d-flex justify-content-start">
+                                <b>Are you sure you want to save this menu ?</b>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Yes</button></a>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </main>
     </div>
