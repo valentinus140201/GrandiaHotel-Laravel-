@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('type')->Nullable();
-            $table->date('expired_at');
+            $table->date('expired_at')->default('2022-09-09');
             $table->integer('is_login')->default(0);
             $table->rememberToken();
             $table->timestamps();
