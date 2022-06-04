@@ -22,11 +22,16 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
+
         if (User::where('email', '=', $request->email)->exists()) {
             $user = User::where('email', $request->email)->first();
 
             if ($user->password == md5($request->password)) {
                 // dd(md5($request->password));
+
+                if($user->expired_at > date('Y-m-d')){
+                    return back()->with('loginError', 'Login failed!');
+                }
                 session()->regenerate();
                 session(['id' => $user->id]);
                 session(['name' => $user->name]);
