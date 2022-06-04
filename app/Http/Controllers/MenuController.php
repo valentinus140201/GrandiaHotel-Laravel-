@@ -75,7 +75,7 @@ class MenuController extends Controller
     {
         $menu = Menu::where('category', $category)->paginate(8)->withQueryString();
         // dd($menu);
-        $comparable = date('Y-m-d');
+        // $now = date('Y-m-d');
         // dd($comparable);
         // masalah klo gabungin where sama latest()
         return view('viewdetails.index', ['title' =>  $category, 'menus' => $menu]);

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->date('promo_awal');
             $table->date('promo_akhir');
             $table->integer('harga_promo');
-            $table->string('is_promo');
             $table->string('category');
             $table->timestamps();
         });

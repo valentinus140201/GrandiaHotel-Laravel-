@@ -43,9 +43,15 @@
                                                 <div>
                                                     {{ $menu->description }}
                                                 </div>
-                                                <div>
-                                                    {{ $menu->harga }}
-                                                </div>
+                                                @if (date('Y-m-d') < $menu->promo_akhir && date('Y-m-d') > $menu->promo_awal)
+                                                    <div>
+                                                        {{ $menu->harga_promo }}
+                                                    </div>
+                                                @else
+                                                    <div>
+                                                        {{ $menu->harga }}
+                                                    </div>
+                                                @endif
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
