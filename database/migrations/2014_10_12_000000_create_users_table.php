@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('type')->Nullable();
+            $table->date('expired_at');
             $table->integer('is_login')->default(0);
             $table->rememberToken();
             $table->timestamps();
