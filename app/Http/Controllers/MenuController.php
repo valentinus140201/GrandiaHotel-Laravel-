@@ -126,14 +126,8 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menu = Menu::where('id', $id)->get();
-        return redirect()->intended('/master');
-    }
-
-    public function delete($id)
-    {
-        // dd($id);
+        // // dd($id);
         Menu::find($id)->delete();
-        return redirect()->intended('/master');
+        return redirect()->intended('/master')->with('success', 'Menu has been deleted');
     }
 }
