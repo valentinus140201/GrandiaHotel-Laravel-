@@ -8,7 +8,7 @@
             {{ csrf_field() }}
             <div class="input-group mb-3">
                 @if (count($menus) > 0)
-                    <input type="hidden" name="category" id="category" value="{{ $menus[0]->category }}">
+                <input type="hidden" name="category" id="category" value="{{ $menus[0]->category }}">
                 @endif
                 <input type="search" class="form-control" placeholder="Search..." id="search" name="search" value="{{ request('search') }}">
                 <button class="btn btn-dark" type="submit">Search</button>
@@ -45,13 +45,14 @@
                                                 </div>
                                                 @if (date('Y-m-d') < $menu->promo_akhir && date('Y-m-d') > $menu->promo_awal)
                                                     <div>
-                                                        {{ $menu->harga_promo }}
+                                                        <p>Dari <s>{{ $menu->harga }}</s> menjadi <strong>{{ $menu->harga_promo }}</strong></p>
+
                                                     </div>
-                                                @else
+                                                    @else
                                                     <div>
                                                         {{ $menu->harga }}
                                                     </div>
-                                                @endif
+                                                    @endif
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
