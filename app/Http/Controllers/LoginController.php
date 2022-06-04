@@ -32,7 +32,7 @@ class LoginController extends Controller
                 session(['name' => $user->name]);
                 session(['type' => $user->type]);
                 User::where('id', $user->id)->update(['is_login' => '1']);
-                return redirect()->intended('/categories');
+                return redirect()->intended('/categories')->with('success', 'Login success!');
             }
         }
         return back()->with('loginError', 'Login failed!');
