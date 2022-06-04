@@ -51,6 +51,7 @@ class PersonalController extends Controller
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
             'type' => 'required',
+            'expired' => 'required'
         ]);
 
         $validateData['password'] = md5($validateData['password']);
