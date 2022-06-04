@@ -52,9 +52,9 @@
                     </select>
                 </div>
                 <div class="form-floating">
-                    <input type="date" name="expired_at" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="Expired" required value="{{ old('expired') }}">
-                    <label for="expired">Expired</label>
-                    @error('expired')
+                    <input type="date" name="expired_at" class="form-control @error('expired-at')is-invalid @enderror" id="expired_at" placeholder="Expired" required value="{{ old('expired_at') }}">
+                    <label for="expired_at">Expired</label>
+                    @error('expired_at')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
