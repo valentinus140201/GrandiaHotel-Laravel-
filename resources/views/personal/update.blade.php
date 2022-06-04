@@ -53,15 +53,15 @@
                         <option value="cashier">Cashier</option>
                     </select>
                 </div>
-                <!-- <div class="form-floating">
-                    <input type="date" name="expired" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="Expired" required value="{{ old('expired') }}">
+                <div class="form-floating">
+                    <input type="date" name="expired" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="{{ $user->expired }}" required value="{{ $user->expired }}">
                     <label for="expired">Expired</label>
                     @error('expired')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                     @enderror
-                </div> -->
+                </div>
                 <button class="w-100 btn btn-lg btn-primary mt-3" type="button" data-bs-toggle="modal" data-bs-target="#updatePersonal">SAVE CHANGE</button>
                 <!-- Modal -->
                 <div class="modal fade" id="updatePersonal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
