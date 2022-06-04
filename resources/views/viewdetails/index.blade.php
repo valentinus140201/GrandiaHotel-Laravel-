@@ -45,7 +45,7 @@
                                                 </div>
                                                 @if (date('Y-m-d') < $menu->promo_akhir && date('Y-m-d') > $menu->promo_awal)
                                                     <div>
-                                                        <p>Dari <s>{{ $menu->harga }}</s> menjadi <strong>{{ $menu->harga_promo }}</strong></p>
+                                                        <p>Dari Rp. <s>{{ $menu->harga }}</s> menjadi Rp. <strong>{{ $menu->harga_promo }}</strong></p>
 
                                                     </div>
                                                     @else
