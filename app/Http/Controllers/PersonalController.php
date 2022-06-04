@@ -44,6 +44,8 @@ class PersonalController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        // $wad = $request->expire;
+
 
         $validateData = $request->validate([
             'name' => 'required|max:255',
@@ -51,13 +53,19 @@ class PersonalController extends Controller
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255',
             'type' => 'required',
-            'expired' => 'required'
         ]);
 
         $validateData['password'] = md5($validateData['password']);
+        User::create($validateData);
+        // $validateData['expired_at'] = $request->expire;
+
+        $temp = User::where('email', '=', $request->email)->first();
+        // dd($temp);
+        $temp->expired_at = $request->expire;
+        $temp->save();
         // dd($validateData['password']);
 
-        User::create($validateData);
+
 
         return redirect()->intended('/personal');
     }
@@ -104,7 +112,7 @@ class PersonalController extends Controller
         $validateData['password'] = md5($validateData['password']);
 
         User::where('id', $request->id)->update($validateData);
-        return redirect()->intended('/personal');
+                return redirect()->intended('/personal');
     }
 
     /**

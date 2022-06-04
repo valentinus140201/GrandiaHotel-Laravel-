@@ -28,8 +28,8 @@ class LoginController extends Controller
 
             if ($user->password == md5($request->password)) {
                 // dd(md5($request->password));
-
-                if($user->expired_at > date('Y-m-d')){
+                // dd( date('Y-m-d'));
+                if($user->expired_at < date('Y-m-d')){
                     return back()->with('loginError', 'Login failed!');
                 }
                 session()->regenerate();
