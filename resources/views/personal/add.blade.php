@@ -52,7 +52,7 @@
                     </select>
                 </div>
                 <div class="form-floating">
-                    <input type="date" name="expired" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="Expired" required value="{{ old('expired') }}">
+                    <input type="date" name="expired_at" class="form-control @error('expired')is-invalid @enderror" id="expired" placeholder="Expired" required value="{{ old('expired') }}">
                     <label for="expired">Expired</label>
                     @error('expired')
                     <div class="invalid-feedback">
