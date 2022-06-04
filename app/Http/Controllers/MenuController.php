@@ -128,7 +128,8 @@ class MenuController extends Controller
         return redirect()->intended('/master');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         // dd($id);
         Menu::find($id)->delete();
         return redirect()->intended('/master');
