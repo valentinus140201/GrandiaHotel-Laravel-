@@ -14,16 +14,16 @@
     </div>
 </div>
 
+@if(session()->has('success'))
 <div class="row justify-content-center mb-3">
     <div class="col-md-6">
-        @if(session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        @endif
     </div>
 </div>
+@endif
 
 @if($categories->count())
 <div class="album py-5 bg-dark mb-4">
